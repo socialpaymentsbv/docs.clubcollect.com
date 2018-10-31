@@ -192,7 +192,6 @@ Company ID, supplied by ClubCollect.
 Partner API Key.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -221,4 +220,6 @@ Partner API Key.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+Parameters for `PUT` are the same as `POST`.
 
