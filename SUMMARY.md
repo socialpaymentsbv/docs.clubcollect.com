@@ -13,9 +13,9 @@
 
 ## API Documentation
 
-* [Company](api-documentation/company.md)
-* [Import](api-documentation/import.md)
-* [Invoice](api-documentation/invoice.md)
-* [Invoice Line](api-documentation/invoice-line.md)
-* [Tickets](api-documentation/tickets.md)
+* [Company](api/company.md)
+* [Import](api/import.md)
+* [Invoice](api/invoice.md)
+* [Invoice Line](api/invoice-line.md)
+* [Tickets](api/tickets.md)
 
