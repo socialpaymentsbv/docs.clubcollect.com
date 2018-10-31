@@ -15,7 +15,6 @@ Fetch an Import’s details.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="string" required=true %}
 Import ID, supplied by ClubCollect.
@@ -27,7 +26,6 @@ Import ID, supplied by ClubCollect.
 Partner API Key.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -62,11 +60,75 @@ Could not find an Import with this ID.
 
 ```javascript
 {
-    "errors": "not_found"
+    "errors": "invalid_import_id"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/imports" %}
+{% api-method-summary %}
+Create Import
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Create a new, empty Import.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="api\_key" type="string" required=true %}
+Partner API Key.
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="title" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="company\_id" type="string" required=true %}
+Company to which the Import should belong.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "import_id": "a1f3216863ba5d5424dcbace46ab37be98d70c92",
+  "title": "Membership fees 2016/02",
+  "transmitted": false,
+  "transmitted_at": null,
+  "prepaid_amount_cents": 0,
+  "prepaid_amount_currency": "EUR",
+  "settled_amount_cents": 0,
+  "settled_amount_currency": "EUR",
+  "invoice_ids": [
+  ]
 }
 ```
 {% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=422 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "error": "invalid_company_id"
+}
+```
+{% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
