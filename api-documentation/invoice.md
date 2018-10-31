@@ -414,6 +414,18 @@ ID of Import to which the Invoice should belong.
 **Note** the total may be zero \(nothing to receive\) or negative \(something to receive\).
 {% endhint %}
 
+{% hint style="info" %}
+**Note** at least one of:
+
+* `customer.email.email_address`
+* `customer.phone.*`
+* `customer.address.*`
+
+must be provided. i.e. there must be a way for us to contact the Customer via email, phone or postal mail.
+{% endhint %}
+
+
+
 {% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
 {% api-method-summary %}
 Update Invoice
