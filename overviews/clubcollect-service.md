@@ -41,7 +41,7 @@ An individual will respond to these requests by following a link to a _Member In
 * paying immediately \(e.g. iDEAL\)
 * embarking on a payment schedule \(e.g. SEPA Direct Debit\)
 
-See [_**Invoice Settings &gt; Payments**_](https://docs.clubcollect.com/overviews/clubcollect-service#payments) below for full details of payment options.
+See _**Invoice Settings &gt; Payments**_ below for full details of payment options.
 
 ### 6. Non-Response
 
