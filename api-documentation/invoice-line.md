@@ -1,5 +1,5 @@
 ---
-description: Retrieve detailed information about Invoice Line Items.
+description: Manage Invoice Line Items.
 ---
 
 # Invoice Line

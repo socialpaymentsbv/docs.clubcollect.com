@@ -26,39 +26,38 @@ An Import Batch is then _transmitted_ to effectively begin the collection proces
 
 A typical configuration will send out a maximum of two requests in up to three communication channels:
 
-*   Email
-*   SMS
-*   Letter
+* Email
+* SMS
+* Letter
 
 ### 5. Response to Communication
 
-An individual will respond to these requests by following a link to a _Member Invoice Page_ which provides opportunity to:
+An individual will respond to these requests by following a link to a _Member Invoice Page_ which provides opportunity to:
 
-*   update contact details
-*   raise a ticket with the Treasurer concerning the invoice
-*   view the invoice details (inc. PDF download)
-*   make a payment decision, either
+* update contact details
+* raise a ticket with the Treasurer concerning the invoice
+* view the invoice details \(inc. PDF download\)
+* make a payment decision, either
+* paying immediately \(e.g. iDEAL\)
+* embarking on a payment schedule \(e.g. SEPA Direct Debit\)
 
-*   paying immediately (e.g. iDEAL)
-*   embarking on a payment schedule (e.g. SEPA Direct Debit)
-
-See _**Invoice Settings > Payments**_ below for full details of payment options.
+See [_**Invoice Settings &gt; Payments**_](https://docs.clubcollect.com/overviews/clubcollect-service#payments) below for full details of payment options.
 
 ### 6. Non-Response
 
-Should an individual not respond to the payment request(s), up to three payment reminders can be sent across some or all of the aforementioned communication channels.
+Should an individual not respond to the payment request\(s\), up to three payment reminders can be sent across some or all of the aforementioned communication channels.
 
 ### 7. Collection Management
 
 The Treasurer or Administrator has access to a rich, comprehensive toolwhich provides a full overview of the state of the collections process. This includes, but is not limited to:
 
-*   see high-level details and totals of all invoices in the system
-*   details of communications and responses (or lack thereof)
-*   details of payment schedules
-*   current invoice balances
-*   details of payments inc. status
-*   details of payouts to organisation
-*   ability to view and respond to tickets
+* see high-level details and totals of all invoices in the system
+* details of communications and responses \(or lack thereof\)
+* details of payment schedules
+* current invoice balances
+* details of payments inc. status
+* details of payouts to organisation
+* ability to view and respond to tickets
 
 Most tables are searchable and filterable to enable quick and easy access to necessary information.
 
@@ -68,7 +67,7 @@ The payments from individuals across all payment methods are received by a third
 
 ### 9. Non-Collection
 
-For unsuccessful attempts at collection, i.e. after the provisions in _**Step 6**_ have been exhausted, there are means provided to manually trigger additional communication—in bulk if necessary—across all channels. ClubCollect can even call members at a fee. For options where a mandate has been provided we can charge the bank account via Sepa Direct Debit. In the last instance ClubCollect offers the possibility of sending an official last reminder by letter (e.g. WIK Letter) and ClubCollect can prepare a log in order to pass on to a debt collection agency.
+For unsuccessful attempts at collection, i.e. after the provisions in _**Step 6**_ have been exhausted, there are means provided to manually trigger additional communication—in bulk if necessary—across all channels. ClubCollect can even call members at a fee. For options where a mandate has been provided we can charge the bank account via Sepa Direct Debit. In the last instance ClubCollect offers the possibility of sending an official last reminder by letter \(e.g. WIK Letter\) and ClubCollect can prepare a log in order to pass on to a debt collection agency.
 
 ### 10. Defaulting on a Payment Schedule
 
@@ -76,37 +75,37 @@ For instances where there has been a response, and a payment schedule has been e
 
 This is one of the areas which provides significant value for treasurers, providing automation for one of the most difficult and time-consuming tasks—chasing up on non-payment—and is only possible in a system like ClubCollect.
 
-For more about payments see _**Invoice Settings > Payments**_ below.
+For more about payments see _**Invoice Settings &gt; Payments**_ below.
 
 ## Invoice Settings
 
-The following settings are available to Treasurers and can be configured per _Batch_ (or group) separately. It divides roughly into two sections, Payments and Communication:
+The following settings are available to Treasurers and can be configured per _Batch_ \(or group\) separately. It divides roughly into two sections, Payments and Communication:
 
 ### Payments
 
-A Treasurer has the option of offering the choice of several payment options to members, some of which come with additional options. These are explained below:
+A Treasurer has the option of offering the choice of several payment options to members, some of which come with additional options. These are explained below:
 
-* iDEAL (Dutch online bank transfer)
+* iDEAL \(Dutch online bank transfer\)
   * in a one-off payment for the full amount
 * SEPA Direct Debit
-  * across a schedule of installments that are configurable (see below)
+  * across a schedule of installments that are configurable \(see below\)
   * for organisations who have a mandate from their members and who wish to collect the full amount immediately after the due date in one transaction
 * Bank Transfer
   * in a one-off payment for the full amount
-  * across a schedule of installments that are configurable (see below)
+  * across a schedule of installments that are configurable \(see below\)
 * Credit Card
   * in a one-off payment for the full amount
 
 A schedule of payment in installments can be configured for both SEPA Direct Debit and Bank Transfer with the following options:
 
-* Number of installments (2–12)
-* Interval between installments, in days (14,21,30,45,60,90,120,150,180)
+* Number of installments \(2–12\)
+* Interval between installments, in days \(14,21,30,45,60,90,120,150,180\)
 
 The following payment methods are currently in development:
 
-* Bancontact Card (Belgian market)
-* Sofort (German market)
-* Bacs (UK Direct Debit)
+* Bancontact Card \(Belgian market\)
+* Sofort \(German market\)
+* Bacs \(UK Direct Debit\)
 
 ClubCollect currently supports EUR and GBP for receiving money and paying out. Depending on the individual payment method funds could technically be paid in other currencies, e.g. a foreign credit card.
 
@@ -118,9 +117,9 @@ Communication occurs across three channels, reaching across the globe:
 * SMS
 * Letter
 
-The system will always send emails (assuming an email address is present) while SMS and Letter can be toggled on or off for certain messages.
+The system will always send emails \(assuming an email address is present\) while SMS and Letter can be toggled on or off for certain messages.
 
-Communication happens with a standard set of well-tested messages, some of these are standard (indicated with an asterisk \*), and others are optional:
+Communication happens with a standard set of well-tested messages, some of these are standard \(indicated with an asterisk \*\), and others are optional:
 
 * Payment Request 1\*
 * Payment Request 2
@@ -134,20 +133,18 @@ In the case that you are collecting payment via SEPA Direct Debit in one fell sw
 
 ClubCollect offers two flavours of pre-financing, i.e. providing organisations with money before the money has been collected from the members. This must be done in communication with ClubCollect for compliance reasons:
 
-*   Pre-financing a lump sum at the beginning of the collection process
-*   Pre-financing invoices on an individual basis when an individual commits to a payment schedule
+* Pre-financing a lump sum at the beginning of the collection process
+* Pre-financing invoices on an individual basis when an individual commits to a payment schedule
 
-  
 In each case ClubCollect pays the organisation up front and then collects the debt from member contributions.
 
 ### Other
 
-In addition to the main categories, there are a few other settings that can be configured:  
+In addition to the main categories, there are a few other settings that can be configured:
 
-*   A Late Payment Fee, if members do not take heed to warnings in requests or reminders the system can add a fee for late payment.
-*   A personal note, for a custom message from the organisation
-*   A custom salutation, to be used on each message  
-    
+* A Late Payment Fee, if members do not take heed to warnings in requests or reminders the system can add a fee for late payment.
+* A personal note, for a custom message from the organisation
+* A custom salutation, to be used on each message  
 
 ## FAQ
 
@@ -161,7 +158,7 @@ Members will see the name of the escrow account with the organisation name and a
 
 **When do we collect our own fees?**
 
-ClubCollect collects fees on a weekly basis (to mirror the payout process).
+ClubCollect collects fees on a weekly basis \(to mirror the payout process\).
 
 **Do we net this with the payout or keep this separate?**
 
@@ -170,3 +167,4 @@ Collecting fees is always separate from the payouts.
 **Why do we pay out on a weekly basis?**
 
 It has been our experience with organisations that if we payout more often it creates extra administrative work, and if we payout less often then it takes too long for organisations to see their money.
+
