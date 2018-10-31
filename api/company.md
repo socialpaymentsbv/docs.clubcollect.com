@@ -4,6 +4,10 @@ description: 'Manage Companies, the entity representing an individual organisati
 
 # Company
 
+{% hint style="danger" %}
+This endpoint is not yet operational. 
+{% endhint %}
+
 {% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/companies/:id" %}
 {% api-method-summary %}
 Show Company

@@ -1,5 +1,5 @@
 ---
-description: 'Manage Imports, distinct collections of Invoices.'
+description: 'Manage Imports, which are collections of Invoices.'
 ---
 
 # Import
