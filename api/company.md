@@ -170,22 +170,29 @@ Company successfully created.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="" path="" %}
+{% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/companies/:id" %}
 {% api-method-summary %}
 Update Company
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+Update Company details.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-parameter name="id" type="string" required=true %}
+Company ID, supplied by ClubCollect.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="api\_key" type="string" required=true %}
+Partner API Key.
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -194,8 +201,21 @@ Update Company
 
 {% endapi-method-response-example-description %}
 
-```
-
+```javascript
+{
+  "company_id": "a1f3216863ba5d5424dcbace46ab37be98d70c92",
+  "name": "Amsterdam Collectors FC",
+  "brand": "clubcollect",
+  "email": "admin@amscollectors.nl",
+  "locale": "nl",
+  "address1": "Sint Pieterspoortsteeg",
+  "address2": "2nd floor",
+  "house_number": "2",
+  "zipcode": "1012 HM",
+  "city": "Amsterdam",
+  "country_code": "NL",
+  "currency": "EUR"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
