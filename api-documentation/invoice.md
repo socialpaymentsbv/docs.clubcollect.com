@@ -194,7 +194,11 @@ Partner API Key
 {% endapi-method %}
 
 {% hint style="info" %}
-A Partner usually calls the `GET /v2/invoices/:id` method in response to a notification sent by ClubCollect about an update to an Invoice.
+**Note** the date format is `ISO 8601`.
+{% endhint %}
+
+{% hint style="info" %}
+**Note** a Partner usually calls the `GET /v2/invoices/:id` method in response to a notification sent by ClubCollect about an update to an Invoice.
 {% endhint %}
 
 {% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/invoices" %}
@@ -741,6 +745,157 @@ Partner API Key
 * `invalid_invoice_lines`: min. 1 line
 * `invalid_amount_total_cents`: should be the total of all invoice line amounts
 * `invalid_credit_amount`: the total amount credited should be negative
+* `invalid_content_type`: `Content-Type: application/json` must be provided.
+* `payment_in_progress`: An invoice can't be credited or retracted if there's a payment in progress
+
+{% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/invoices/:id/credit\_and\_retract" %}
+{% api-method-summary %}
+Credit and Retract Invoice
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Call this method to credit the total outstanding amount of an invoice and retract it in a single HTTP request. Only the amount without considering additional fees will be credited. It won't be possible to apply more credits to the invoice.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="string" required=true %}
+ID of the Invoice to be retracted.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Content-Type" type="string" required=true %}
+Must be `application/json`.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="api\_key" type="string" required=true %}
+Partner API Key.
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="show\_retraction\_reason\_to\_customer" type="boolean" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="retraction\_reason" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="description" type="string" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "import_id": "...", 
+  "external_invoice_number": "2014-342-545", 
+  "direct_debit_iban": "...", 
+  "federation_membership_number": "...", 
+  "club_membership_number": "...", 
+  "customer": {
+    "name": { 
+      "prefix": "Mr", 
+      "first_name": "Joe", 
+      "infix": "van der", 
+      "last_name": "Doe"
+    },
+    "address": { 
+      "address1": "3rd Avenue", 
+      "address2": "", 
+      "locality": "", 
+      "house_number": "1500", 
+      "state": "", 
+      "zipcode": "10010", 
+      "city": "Amsterdam", 
+      "country_code": "NL"
+    },
+    "email": { 
+      "email_address": "joe@example.com"
+    },
+    "phone": { 
+      "phone_number": "562-756-2233", 
+      "country_code": "NL"
+    } 
+  }, 
+  "invoice_lines": [        
+    {
+      "invoice_line_id": "...",            
+      "type": "INVOICE-LINE",            
+      "amount_cents": 10000,            
+      "description": "Membership fee",            
+      "date": "..."        
+    },
+    { 
+      "invoice_line_id": "...", 
+      "amount_cents": -1000, 
+      "description": "Deduction",
+      "date": "..." 
+    }
+  ],
+  "amount_total_cents": 9000,
+  "tickets": [], 
+  "messages": []
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "error": "invalid_invoice_id"
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=422 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "error": "payment_in_progress"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+#### Example Request Body
+
+```javascript
+{ 
+  "external_invoice_number": "2014-342-545", 
+  "description": "Cash payment", 
+  "retraction_reason": "Paid by cash", 
+  "show_retraction_reason_to_customer": true 
+}
+```
+
+#### Error Messages
+
+* `invalid_invoice_id`: No invoice with this ID could be found.
+* `invalid_external_invoice_number`
+* `invalid_description`: `description` must be provided.
+* `already_retracted`: The invoice with this ID has already been retracted.
 * `invalid_content_type`: `Content-Type: application/json` must be provided.
 * `payment_in_progress`: An invoice can't be credited or retracted if there's a payment in progress
 

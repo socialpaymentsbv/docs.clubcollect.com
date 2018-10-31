@@ -17,5 +17,4 @@
 * [Import](api-documentation/import.md)
 * [Invoice](api-documentation/invoice.md)
 * [Invoice Line](api-documentation/invoice-line.md)
-* [Tickets](api-documentation/tickets.md)
 
