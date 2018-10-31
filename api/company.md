@@ -26,7 +26,6 @@ Company ID, supplied by ClubCollect.
 Partner API Key.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -86,7 +85,6 @@ Partner API Key.
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
-
 {% api-method-parameter name="name" type="string" required=true %}
 Name of Company.
 {% endapi-method-parameter %}
@@ -112,30 +110,36 @@ Country of official Company registration. From `{ AT BE CH DE GB IE NL }`.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="address1" type="string" required=false %}
+
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="address2" type="string" required=false %}
+
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="house\_number" type="string" required=false %}
+
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="zipcode" type="string" required=false %}
+
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="city" type="string" required=false %}
+
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="vat\_percentage" type="number" required=false %}
+
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="partnership\_page\_url" type="string" required=false %}
+
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="currency" type="string" required=true %}
 Currency. From `{ EUR GBP CHF }`.
 {% endapi-method-parameter %}
-
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
