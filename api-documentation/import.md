@@ -199,3 +199,7 @@ Batch successfully transmitted.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% hint style="info" %}
+Ensure you have finished creating all Invoices for this Import before calling this method. It is not possible to change or add more Invoices to an Import after the Import has been transmitted. 
+{% endhint %}
+
