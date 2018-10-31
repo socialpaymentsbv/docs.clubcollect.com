@@ -27,15 +27,6 @@ Partner API Key.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="currency" type="string" required=false %}
-`{ EUR GBP CHF }`
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="name" type="string" required=true %}
-Name of Company
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -93,6 +84,59 @@ Create a new Company.
 Partner API Key.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
+
+{% api-method-body-parameters %}
+
+{% api-method-parameter name="name" type="string" required=true %}
+Name of Company.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="cbio\_trial" type="boolean" required=true %}
+When `true`, some mandatory parameters become optional.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="brand" type="string" required=true %}
+Brand code. From `{ clubbaseio knltb dtb clubcollect clubcollectde }`.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="email" type="string" required=true %}
+Email address of Company contact.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="locale" type="string" required=true %}
+Default locale for Company members. From `{ de en fr it nl }`.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="country\_code" type="string" required=true %}
+Country of official Company registration. From `{ AT BE CH DE GB IE NL }`.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="address1" type="string" required=false %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="address2" type="string" required=false %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="house\_number" type="string" required=false %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="zipcode" type="string" required=false %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="city" type="string" required=false %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="vat\_percentage" type="number" required=false %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="partnership\_page\_url" type="string" required=false %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="currency" type="string" required=true %}
+Currency. From `{ EUR GBP CHF }`.
+{% endapi-method-parameter %}
+
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
