@@ -23,9 +23,19 @@ Company ID, supplied by ClubCollect.
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.  
+Partner API Key.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="currency" type="string" required=false %}
+`{ EUR GBP CHF }`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="name" type="string" required=true %}
+Name of Company
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -107,11 +117,8 @@ Company successfully created.
   "currency": "EUR"
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 
