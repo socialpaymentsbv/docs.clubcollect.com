@@ -225,6 +225,10 @@ Partner API Key
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
+{% api-method-parameter name="locale" type="string" required=false %}
+When supplied, the invoice's locale will be set to this value.  From `{ de en fr it nl }`
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="direct\_debit\_iban" type="string" required=false %}
 When supplied, will be accepted and added to the Invoice only if it is a valid IBAN.
 {% endapi-method-parameter %}
@@ -359,6 +363,7 @@ ID of Import to which the Invoice should belong.
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
+  "locale": "en",
   "customer": {
     "name": { 
       "prefix": "Mr", 
