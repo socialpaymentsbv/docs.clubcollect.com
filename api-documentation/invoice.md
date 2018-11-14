@@ -42,6 +42,7 @@ Partner API Key
 
 ```javascript
 {
+  "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
   "direct_debit_iban": "...", 
@@ -299,6 +300,7 @@ ID of Import to which the Invoice should belong.
 
 ```javascript
 {
+  "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
   "direct_debit_iban": "...", 
@@ -805,6 +807,7 @@ Partner API Key.
 
 ```javascript
 {
+  "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
   "direct_debit_iban": "...", 
