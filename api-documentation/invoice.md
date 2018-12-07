@@ -227,7 +227,7 @@ Partner API Key
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="locale" type="string" required=false %}
-When supplied, the invoice's locale will be set to this value.  From `{ de en fr it nl }`
+When supplied, the invoice's locale will be set to this value. From `{ de en fr it nl }`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="direct\_debit\_iban" type="string" required=false %}
@@ -356,7 +356,7 @@ ID of Import to which the Invoice should belong.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Example Request Body
+## Example Request Body
 
 ```javascript
 {
@@ -410,7 +410,7 @@ ID of Import to which the Invoice should belong.
 }
 ```
 
-#### Error Messages
+## Error Messages
 
 * `invalid_import_id`: No import with this ID could be found.
 * `invalid_external_invoice_number`: formatting error: min. 1 character.
@@ -434,8 +434,6 @@ ID of Import to which the Invoice should belong.
 
 must be provided. i.e. there must be a way for us to contact the Customer via email, phone or postal mail.
 {% endhint %}
-
-
 
 {% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
 {% api-method-summary %}
@@ -554,7 +552,7 @@ Partner API Key
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Example Request Body
+## Example Request Body
 
 ```javascript
 {
@@ -590,7 +588,7 @@ Partner API Key
 }
 ```
 
-#### Error Messages
+## Error Messages
 
 * `invalid_invoice_id`: No invoice with this `invoice_id` could be found.
 * `invalid_external_invoice_number`: formatting error: min. 1 character.
@@ -649,7 +647,7 @@ Partner API Key
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
@@ -730,7 +728,7 @@ Partner API Key
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Example Request Body
+## Example Request Body
 
 ```javascript
 { 
@@ -745,7 +743,7 @@ Partner API Key
 }
 ```
 
-#### Error Messages
+## Error Messages
 
 * `invalid_invoice_id`: No invoice with this `invoice_id` could be found.
 * `invalid_external_invoice_number`: min. 1 character
@@ -887,7 +885,7 @@ Partner API Key.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Example Request Body
+## Example Request Body
 
 ```javascript
 { 
@@ -898,7 +896,7 @@ Partner API Key.
 }
 ```
 
-#### Error Messages
+## Error Messages
 
 * `invalid_invoice_id`: No invoice with this ID could be found.
 * `invalid_external_invoice_number`

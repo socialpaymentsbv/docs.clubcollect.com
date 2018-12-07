@@ -95,6 +95,10 @@ A Treasurer has the option of offering the choice of several payment options to 
   * across a schedule of installments that are configurable \(see below\)
 * Credit Card
   * in a one-off payment for the full amount
+* Bancontact Card \(Belgium\)
+  * in a one-off payment for the full amount
+* Bacs Direct Debit \(UK\)
+  * in a one-off payment for the full amount
 
 A schedule of payment in installments can be configured for both SEPA Direct Debit and Bank Transfer with the following options:
 
@@ -103,9 +107,9 @@ A schedule of payment in installments can be configured for both SEPA Direct Deb
 
 The following payment methods are currently in development:
 
-* Bancontact Card \(Belgian market\)
-* Sofort \(German market\)
-* Bacs \(UK Direct Debit\)
+* Sofort \(Germany\)
+* Bacs Direct Debit \(UK\)
+  * across a schedule of installments that are configurable
 
 ClubCollect currently supports EUR and GBP for receiving money and paying out. Depending on the individual payment method funds could technically be paid in other currencies, e.g. a foreign credit card.
 

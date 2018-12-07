@@ -1,7 +1,3 @@
----
-description: 'Manage Tickets, communication surrounding an individual Invoice.'
----
-
 # Ticket
 
 {% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/invoices/:id/tickets" %}

@@ -1,5 +1,5 @@
 ---
-description: A walkthrough guide to a typical integration.
+description: A guide to integration for Partners.
 ---
 
 # Partner Integration
