@@ -74,7 +74,7 @@ Updates to invoices that occur through the collection process are sent to the pa
 3. ClubCollect fetches invoice data from partner.
 4. Partner’s client manages everything via ClubCollect.
 
-**Verification**
+#### **Verification**
 
 In order to be compliant with regulations, we are required to know whether the treasurer/administrator is a legitimate representative of an official organization.
 
