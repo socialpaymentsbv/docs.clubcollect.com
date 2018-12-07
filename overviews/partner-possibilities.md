@@ -82,6 +82,9 @@ Therefore, we expect the following documents before we can start processing invo
 
 * Personal identification documents of organization signatories
 * Bank statement of the organization \(with at least IBAN, address and name of the account holder\)
-* SEPA mandate
+* SEPA or Direct Debit mandate
 * Proof of registry in the local Chamber of Commerce \(we often download this ourselves\)
+  * Kamer van Koophandel \(Netherlands\)
+  * Companies House \(UK\)
+  * Handelsregister \(Germany\)
 
