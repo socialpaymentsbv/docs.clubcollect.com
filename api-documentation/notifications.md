@@ -27,3 +27,12 @@ The provision of `api_key` is a means of verifying that the request originated f
 {% endhint %}
 
 Using both the `invoice_ids` array and the `import_ids` array allows the Partner to fetch invoices and imports respectively via the relevant API endpoints to pull through the latest information. For example, after receiving the request body from the example above, four API calls could be made to fetch data on three invoices and one import.
+
+This covers all data with regards to an invoice, including notifications of payments, credits, and updates to personal and contact information attached to an invoice.
+
+{% hint style="info" %}
+To avoid overloading the server, requests should be spread out rather than being executed at once.
+{% endhint %}
+
+
+
