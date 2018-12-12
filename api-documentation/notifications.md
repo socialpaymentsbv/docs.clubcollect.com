@@ -30,7 +30,7 @@ Using both the `invoice_ids` array and the `import_ids` array allows the Partner
 
 This covers all data with regards to an invoice, including notifications of payments, credits, and updates to personal and contact information attached to an invoice.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 To avoid overloading the server, requests should be spread out rather than being executed at once.
 {% endhint %}
 
