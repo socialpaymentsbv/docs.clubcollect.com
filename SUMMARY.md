@@ -18,4 +18,5 @@
 * [Invoice](api-documentation/invoice.md)
 * [Invoice Line](api-documentation/invoice-line.md)
 * [Ticket](api-documentation/ticket.md)
+* [Notifications](api-documentation/notifications.md)
 
