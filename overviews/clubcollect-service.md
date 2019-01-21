@@ -156,7 +156,7 @@ In addition to the main categories, there are a few other settings that can be c
 
 This is industry standard practice to ensure the integrity of the relationship. It ensures that ClubCollect, the company, never touches any individual’s money.
 
-**What do members in their bank statement?**
+**What do members see in their bank statement?**
 
 Members will see the name of the escrow account with the organisation name and an invoice reference in the description.
 
