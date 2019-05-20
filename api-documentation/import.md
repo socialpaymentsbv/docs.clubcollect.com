@@ -203,3 +203,66 @@ Batch successfully transmitted.
 Ensure you have finished creating all Invoices for this Import before calling this method. It is not possible to change or add more Invoices to an Import after the Import has been transmitted. 
 {% endhint %}
 
+{% api-method method="delete" host="https://api.clubcollect.com/api" path="/v2/imports/:id" %}
+{% api-method-summary %}
+Delete Import
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Deletes an import and all the invoices that have been created for the import.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="string" required=true %}
+Import ID
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="api\_key" type="string" required=true %}
+Partner API Key
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=204 %}
+{% api-method-response-example-description %}
+Batch successfully deleted.
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "error": "invalid_import_id"
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=422 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "error": "import_already_transmitted"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
