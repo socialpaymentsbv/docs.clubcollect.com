@@ -603,7 +603,7 @@ Credit Invoice
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Create a Credit Invoice for an existing Invoice. The Credit Invoice may contain one or more Invoice Lines. You cannot credit a Credit Invoice. Positive Invoice Line amounts are allowed provided the total amount is negative.
+Adds a credit to an existing Invoice. The credit may contain one or more Invoice Lines. You cannot credit an invoice that is fully credited or retracted. Positive Invoice Line amounts are allowed provided the total amount is negative and the total outstanding of the invoice is not negative after adding the invoice lines.
 {% endapi-method-description %}
 
 {% api-method-spec %}
