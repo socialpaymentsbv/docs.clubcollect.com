@@ -258,10 +258,6 @@ Must be equal to the sum of the amounts of the Invoice Lines. May be zero or neg
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="customer.address.zipcode" type="string" required=true %}
-
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="customer.address.address1" type="string" required=true %}
 
 {% endapi-method-parameter %}
