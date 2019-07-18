@@ -65,7 +65,7 @@ Invoice Lines fetched successfully.
       "amount_cents": 123,            
       "description": null,            
       "date": "...",
-      "payment_method_code": "..."        
+      "payment_method": "..."        
     },        
     {          
       "invoice_line_id": "...",            
@@ -101,7 +101,7 @@ Invoice Lines fetched successfully.
       "amount_cents": 123,            
       "description": null,            
       "date": "...",
-      "payment_method_code": "..."        
+      "payment_method": "..."        
         
     },        
     {          
@@ -117,7 +117,7 @@ Invoice Lines fetched successfully.
         "amount_cents": 123,            
         "description": null,            
         "date": "...",        
-        "payment_method_code": "..."        
+        "payment_method": "..."        
         }    
       ],      
     "amount_total_cents": "..."
@@ -149,7 +149,7 @@ Invoice not found.
 {% endhint %}
 
 {% hint style="info" %}
-**Note** that `payment_method_code` is present only for Payment Lines and its value can be one of:
+**Note** that `payment_method` is present only for Payment Lines and its value can be one of:
 
 - `ideal`
 - `sdd`
