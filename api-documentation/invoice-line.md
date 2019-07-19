@@ -64,7 +64,8 @@ Invoice Lines fetched successfully.
       "type": "PAYMENT-LINE",           
       "amount_cents": 123,            
       "description": null,            
-      "date": "..."        
+      "date": "...",
+      "payment_method": "..."        
     },        
     {          
       "invoice_line_id": "...",            
@@ -99,7 +100,9 @@ Invoice Lines fetched successfully.
       "type": "LATE-PAYMENT-FEE-PAYMENT-LINE",            
       "amount_cents": 123,            
       "description": null,            
-      "date": "..."        
+      "date": "...",
+      "payment_method": "..."        
+        
     },        
     {          
       "invoice_line_id": "...",            
@@ -113,7 +116,8 @@ Invoice Lines fetched successfully.
         "type": "INSTALLMENT-FEE-PAYMENT-LINE",           
         "amount_cents": 123,            
         "description": null,            
-        "date": "..."        
+        "date": "...",        
+        "payment_method": "..."        
         }    
       ],      
     "amount_total_cents": "..."
@@ -144,3 +148,16 @@ Invoice not found.
 **Note** that `description` is not `null` only for regular Invoice Lines and Credit Lines.
 {% endhint %}
 
+{% hint style="info" %}
+**Note** that `payment_method` is present only for Payment Lines and its value can be one of:
+
+- `ideal`
+- `sdd`
+- `bank_transfer`
+- `credit_card`
+- `bancontact`
+- `bacs`
+- `sofort`
+- `external`
+
+{% endhint %}
