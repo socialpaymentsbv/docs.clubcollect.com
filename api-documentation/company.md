@@ -93,10 +93,6 @@ Partner API Key.
 Name of Company.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="cbio\_trial" type="boolean" required=true %}
-When `true`, some mandatory parameters become optional.
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="brand" type="string" required=true %}
 Brand code. From `{ clubbaseio knltb dtb clubcollect clubcollectde }`.
 {% endapi-method-parameter %}
