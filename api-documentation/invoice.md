@@ -72,8 +72,7 @@ Partner API Key
     "phone": { 
       "phone_number": "562-756-2233", 
       "country_code": "NL"
-    },
-    "invoice_number": "..."
+    }
   }, 
   "invoice_lines": [        
     {
@@ -331,8 +330,7 @@ ID of Import to which the Invoice should belong.
     "phone": { 
       "phone_number": "562-756-2233", 
       "country_code": "NL"
-    },
-    "invoice_number": "..."
+    }
   }, 
   "invoice_lines": [        
     {
@@ -505,8 +503,7 @@ Partner API Key
     "phone": { 
       "phone_number": "562-756-2233", 
       "country_code": "NL"
-    },
-    "invoice_number": "..." 
+    }
   }, 
   "invoice_lines": [        
     {
@@ -683,8 +680,7 @@ Partner API Key
     "phone": { 
       "phone_number": "562-756-2233", 
       "country_code": "NL"
-    },
-    "invoice_number": "..." 
+    }
   }, 
   "invoice_lines": [        
     {
@@ -842,8 +838,7 @@ Partner API Key.
     "phone": { 
       "phone_number": "562-756-2233", 
       "country_code": "NL"
-    },
-    "invoice_number": "..." 
+    }
   }, 
   "invoice_lines": [        
     {
