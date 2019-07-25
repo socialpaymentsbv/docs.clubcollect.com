@@ -45,6 +45,7 @@ Partner API Key
   "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
@@ -91,7 +92,8 @@ Partner API Key
     },        
     {          
       "invoice_line_id": "...",            
-      "type": "PAYMENT-LINE",           
+      "type": "PAYMENT-LINE",
+      "payment_method": "ideal|bacs|bancontact|credit_card|sdd|bank_transfer",
       "amount_cents": 123,            
       "description": "...",            
       "date": "..."        
@@ -126,7 +128,8 @@ Partner API Key
     },        
     {          
       "invoice_line_id": "...",            
-      "type": "LATE-PAYMENT-FEE-PAYMENT-LINE",            
+      "type": "LATE-PAYMENT-FEE-PAYMENT-LINE",
+      "payment_method": "ideal|bacs|bancontact|credit_card|sdd|bank_transfer",
       "amount_cents": 123,            
       "description": "...",            
       "date": "..."        
@@ -140,7 +143,8 @@ Partner API Key
     },        
     {          
       "invoice_line_id": "...",            
-      "type": "INSTALLMENT-FEE-PAYMENT-LINE",           
+      "type": "INSTALLMENT-FEE-PAYMENT-LINE",
+      "payment_method": "ideal|bacs|bancontact|credit_card|sdd|bank_transfer",
       "amount_cents": 123,            
       "description": "...",            
       "date": "..."        
@@ -300,6 +304,7 @@ ID of Import to which the Invoice should belong.
   "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
@@ -473,6 +478,7 @@ Partner API Key
 {
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
@@ -650,6 +656,7 @@ Partner API Key
 {
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
@@ -808,6 +815,7 @@ Partner API Key.
   "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
