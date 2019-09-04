@@ -102,7 +102,7 @@ Invoice Lines fetched successfully.
       "description": null,            
       "date": "...",
       "payment_method": "..."        
-        
+
     },        
     {          
       "invoice_line_id": "...",            
@@ -151,13 +151,13 @@ Invoice not found.
 {% hint style="info" %}
 **Note** that `payment_method` is present only for Payment Lines and its value can be one of:
 
-- `ideal`
-- `sdd`
-- `bank_transfer`
-- `credit_card`
-- `bancontact`
-- `bacs`
-- `sofort`
-- `external`
-
+* `ideal`
+* `sdd`
+* `bank_transfer`
+* `credit_card`
+* `bancontact`
+* `bacs`
+* `sofort`
+* `external`
 {% endhint %}
+

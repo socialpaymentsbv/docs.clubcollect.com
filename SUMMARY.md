@@ -19,4 +19,6 @@
 * [Invoice Line](api-documentation/invoice-line.md)
 * [Ticket](api-documentation/ticket.md)
 * [Notifications](api-documentation/notifications.md)
+* [Payments \(WIP\)](api-documentation/payments.md)
+* [Untitled](api-documentation/untitled.md)
 

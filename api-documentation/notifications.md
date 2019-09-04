@@ -34,5 +34,3 @@ This covers all data with regards to an invoice, including notifications of paym
 To avoid overloading the server, requests should be spread out rather than being executed at once.
 {% endhint %}
 
-
-

@@ -167,7 +167,7 @@ Partner API Key
 Batch successfully transmitted.
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -200,7 +200,7 @@ Batch successfully transmitted.
 {% endapi-method %}
 
 {% hint style="info" %}
-Ensure you have finished creating all Invoices for this Import before calling this method. It is not possible to change or add more Invoices to an Import after the Import has been transmitted. 
+Ensure you have finished creating all Invoices for this Import before calling this method. It is not possible to change or add more Invoices to an Import after the Import has been transmitted.
 {% endhint %}
 
 {% api-method method="delete" host="https://api.clubcollect.com/api" path="/v2/imports/:id" %}
@@ -233,7 +233,7 @@ Partner API Key
 Batch successfully deleted.
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -264,5 +264,4 @@ Batch successfully deleted.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
 
