@@ -909,3 +909,65 @@ Partner API Key.
 * `invalid_content_type`: `Content-Type: application/json` must be provided.
 * `payment_in_progress`: An invoice can't be credited or retracted if there's a payment in progress
 
+
+{% api-method method="delete" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
+{% api-method-summary %}
+Delete Invoice
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Deletes an invoices. Note that invoice must not be transmited in order to perform this operations.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="string" required=true %}
+Invoice ID
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="api\_key" type="string" required=true %}
+Partner API Key
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=204 %}
+{% api-method-response-example-description %}
+Invoice successfully deleted.
+{% endapi-method-response-example-description %}
+
+```text
+
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "error": "invalid_invoice_id"
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=422 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "error": "invoice_already_transmitted"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
