@@ -45,6 +45,7 @@ Partner API Key
   "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "reference": "internal-reference",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
@@ -286,6 +287,10 @@ May be empty if \`phone\_number\` is provided.
 
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="reference" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="import\_id" type="string" required=true %}
 ID of Import to which the Invoice should belong.
 {% endapi-method-parameter %}
@@ -303,6 +308,7 @@ ID of Import to which the Invoice should belong.
   "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "reference": "internal-reference",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
@@ -363,6 +369,7 @@ ID of Import to which the Invoice should belong.
 {
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "reference": "internal-reference",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
@@ -476,6 +483,7 @@ Partner API Key
 {
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "reference": "internal-reference",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
@@ -559,6 +567,7 @@ Partner API Key
 ```javascript
 {
   "external_invoice_number": "2014-342-545", 
+  "reference": "internal-reference",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
@@ -649,10 +658,11 @@ Partner API Key
 
 {% endapi-method-response-example-description %}
 
-```text
+```javascript
 {
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "reference": "internal-reference",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
@@ -811,6 +821,7 @@ Partner API Key.
   "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
+  "reference": "internal-reference",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
