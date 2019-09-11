@@ -45,7 +45,7 @@ Partner API Key
   "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
-  "reference": "internal-reference",
+  "reference": "ba6fe77",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
@@ -308,7 +308,7 @@ ID of Import to which the Invoice should belong.
   "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
-  "reference": "internal-reference",
+  "reference": "ba6fe77",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
@@ -369,7 +369,7 @@ ID of Import to which the Invoice should belong.
 {
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
-  "reference": "internal-reference",
+  "reference": "ba6fe77",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
@@ -483,7 +483,7 @@ Partner API Key
 {
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
-  "reference": "internal-reference",
+  "reference": "ba6fe77",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
@@ -567,7 +567,7 @@ Partner API Key
 ```javascript
 {
   "external_invoice_number": "2014-342-545", 
-  "reference": "internal-reference",
+  "reference": "ba6fe77",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
   "club_membership_number": "...", 
@@ -662,7 +662,7 @@ Partner API Key
 {
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
-  "reference": "internal-reference",
+  "reference": "ba6fe77",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
@@ -821,7 +821,7 @@ Partner API Key.
   "invoice_id": "...",
   "import_id": "...", 
   "external_invoice_number": "2014-342-545", 
-  "reference": "internal-reference",
+  "reference": "ba6fe77",
   "invoice_number": "123456",
   "direct_debit_iban": "...", 
   "federation_membership_number": "...", 
