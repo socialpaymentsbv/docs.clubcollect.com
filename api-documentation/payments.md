@@ -6,7 +6,7 @@ description: Use ClubCollect as your payment provider
 
 {% api-method method="get" host="https://app.clubcollect.com/api/v2/payments" path="/ideal" %}
 {% api-method-summary %}
-ideal
+iDEAL payments
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -164,7 +164,7 @@ The format of the JSON payload sent in the notifications is as follows:
 {% api-method-query-parameters %}
 
 {% api-method-parameter name="company_id" type="string" required=true %}
-Company receiver of the payment.
+Unique identifier of the company receiver of the payment.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="redirect_url" type="string" required=true %}
@@ -245,7 +245,6 @@ Language that will be used in the payment process. If not given, the company def
 
 {% api-method-response %}
 
-
 {% api-method-response-example httpCode=302 %}
 {% api-method-response-example-description %}
 The payment request is valid, the payee is redirected to the payment page and completes the payment process.
@@ -305,6 +304,67 @@ The payment request has an invalid signature
 }
 {% endapi-method-response-example %}
 
+{% endapi-method-response %}
+
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://app.clubcollect.com/api/v2/payments" path="/:payment_id" %}
+{% api-method-summary %}
+Check status of a payment
+{% endapi-method-summary %}
+
+{% api-method-description %}
+ClubCollect will inform about any changes in the status using payment notifications. This endpoint can be used as a "backup" by the partner to check the current status of a payment in case any notification is dismissed.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+
+{% api-method-parameter name="payment_id" type="string" required=true %}
+  Unique payment identifier returned by ClubCollect in the payment response.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="company_id" type="string" required=true %}
+Unique identifier of the company receiver of the payment.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="signature" type="string" required=true %}
+Request signature.
+{% endapi-method-parameter %}
+
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+When all the parameters are valid, the endpoint will return a JSON payload informing about the current status of the payment similar to the payload in the payment notifications.
+{% endapi-method-response-example-description %}
+{
+    "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
+    "invoice_id": "e06be9959a6d5ad6e1ce80caf97e3244d6024dd1",
+    "payment_id": "ae515fabdd886cd0c49408f9696c5498848977fe",
+    "payment_method": "ideal",
+    "payment_result": "authorized",
+    "external_invoice_number": "12345",
+    "created_at": "2019-09-15T16:15:56Z",
+    "updated_at": "2019-09-15T16:38:07Z",
+}
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=422 %}
+{% api-method-response-example-description %}
+When one of the parameters is invalid, the JSON payload will inform about the error.
+{% endapi-method-response-example-description %}
+{
+    "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
+    "error_code": "invalid_params",
+    "error_details": "invalid_payment_id"
+}
+{% endapi-method-response-example %}
 {% endapi-method-response %}
 
 {% endapi-method-spec %}
