@@ -1,7 +1,6 @@
 ---
 description: Use ClubCollect as your payment provider
 ---
-
 # Payments \(WIP\)
 
 {% api-method method="get" host="https://app.clubcollect.com/api/v2/payments" path="/ideal" %}
@@ -14,11 +13,10 @@ This endpoint allows to start a new iDEAL payment and redirects the user to the 
 
 To start the payment session, the partner needs to generate the payment URL with the required parameters and add a signature to avoid tampering with data.
 
-Payments will always be linked to an invoice in ClubCollect. The invoice will be created ad hoc from the parameters received in the request, unless the partner provides an invoice_id to be paid. When the invoice_id is given, the payment will be generated for the total amount due for the invoice.
+Payments will always be linked to an invoice in ClubCollect. The invoice will be created ad hoc from the parameters received in the request, unless the partner provides the `invoice_id` of an existing invoice to be paid. When the `invoice_id` is given, the payment will be generated for the total amount due for the invoice.
 
 The invoices that are generated ad hoc are grouped in batches, per month. These batches can be found on
 `https://app.clubcollect.com/treasurer/import\_batches\`, named `iDEAL (<year>-<month>)` by default, e.g. `iDEAL (2019-08)`.
-
 
 ##Signature##
 
@@ -27,7 +25,6 @@ To ensure authenticity and data integrity of incoming payment requests ClubColle
 Before sending a payment request to ClubCollect, the partner has to calculate the signature and add it as a request parameter. When a request comes in, ClubCollect calculates the same signature based on the received key-value pairs and the secret key. By verifying that both signatures are equal, ClubCollect ensures that the request is not tampered.
 
 Similarly, the partner can validate responses from ClubCollect by calculating the corresponding signature and comparing it with the signature in the response.
-
 
 Let's explain now how to calculate the signature step by step using the key-value pairs in the table below as example.
 
@@ -59,7 +56,6 @@ key | value
 `last_name` | `Doe`
 `company_id` | `d4b8772c67154a6bced8a8b827e177cc00111fe0`
 `payment_reference` | `Club membership 2019/2`
-
 
 2. Sort the key-value pairs by key.
 
@@ -119,7 +115,7 @@ Once the users finish the payment process, they are redirected to a result page 
 
 ClubCollect will append parameters to this URL. `payment_result` will inform the partner about the payment status. If the status is already determined (either `authorised` or `refused` or `cancelled`), this information can be used to display a payment successful or payment failed or payment cancelled page.
 
-In a case when the current status is `pending`, the outcome of the payment will be communicated with payment notifications.
+In a case when the current status is `pending`, the outcome of the payment will be communicated with payment notifications. Payments with status `cancelled` may be authorized later by the payment provider.
 
 The partner is encouraged to store the `invoice_id` and `payment_id` returned in ClubCollect responses and payment notifications, they will be needed to track the status of the payments. As an alternative, the partner can provide a unique `external_invoice_number` parameter in the payment request and ClubCollect will include it on the response and notifications.
 
@@ -248,31 +244,26 @@ Language that will be used in the payment process. If not given, the company def
 {% api-method-response-example httpCode=302 %}
 {% api-method-response-example-description %}
 The payment request is valid, the payee is redirected to the payment page and completes the payment process.
-The user will be redirected to the `redirect_url` specified by the partner in the payment request and the parameters listed below will be appended to the URL. ClubCollect will add also a signature to the request, only considering the parameters added to the request by ClubCollect.
+The user will be redirected to the `redirect_url` specified by the partner in the payment request and the parameters listed below will be appended to the URL. The signature added by ClubCollect will be generated only for these parameters added by ClubCollect.
 {% endapi-method-response-example-description %}
-{
-    "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
-    "invoice_id": "e06be9959a6d5ad6e1ce80caf97e3244d6024dd1",
-    "payment_id": "ae515fabdd886cd0c49408f9696c5498848977fe",
-    "payment_method": "ideal",
-    "payment_result": "authorized",
-    "external_invoice_number": "12345",
-}
+  "company_id=25b39de9bedc3409e195a99bb3a31918c12182e7",
+  "invoice_id=e06be9959a6d5ad6e1ce80caf97e3244d6024dd1",
+  "payment_id=ae515fabdd886cd0c49408f9696c5498848977fe",
+  "payment_method=ideal",
+  "payment_resul=authorized",
+  "external_invoice_number=12345"
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=302 %}
 {% api-method-response-example-description %}
 The payment request is valid, the payee is redirected to the payment page and completes the payment but the payment provider wasn't able to authorize the payment yet.
 {% endapi-method-response-example-description %}
-
-{
-    "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
-    "invoice_id": "e06be9959a6d5ad6e1ce80caf97e3244d6024dd1",
-    "payment_id": "ae515fabdd886cd0c49408f9696c5498848977fe",
-    "payment_method": "ideal",
-    "payment_result": "pending",
-    "external_invoice_number": "12345",
-}
+  "company_id=25b39de9bedc3409e195a99bb3a31918c12182e7",
+  "invoice_id=e06be9959a6d5ad6e1ce80caf97e3244d6024dd1",
+  "payment_id=ae515fabdd886cd0c49408f9696c5498848977fe",
+  "payment_method=ideal",
+  "payment_result=pending",
+  "external_invoice_number"=12345",
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=302 %}
@@ -281,27 +272,22 @@ The payment request is valid, the payee is redirected to the payment page but th
 by the payee.
 
 {% endapi-method-response-example-description %}
-{
-    "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
-    "invoice_id": "e06be9959a6d5ad6e1ce80caf97e3244d6024dd1",
-    "payment_id": "ae515fabdd886cd0c49408f9696c5498848977fe",
-    "payment_method": "ideal",
-    "payment_result": "cancelled",
-    "external_invoice_number": "12345",
-}
+  "company_id=25b39de9bedc3409e195a99bb3a31918c12182e7",
+  "invoice_id=e06be9959a6d5ad6e1ce80caf97e3244d6024dd1",
+  "payment_id=ae515fabdd886cd0c49408f9696c5498848977fe",
+  "payment_method=ideal",
+  "payment_result=cancelled",
+  "external_invoice_number"=12345",
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=302 %}
 {% api-method-response-example-description %}
 The payment request has an invalid signature
 {% endapi-method-response-example-description %}
-
-{
-    "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
-    "payment_method": "ideal",
-    "error_code": "unprocessable_entity",
-    "error_details": "invalid_signature;invalid_partner"
-}
+  "company_id=25b39de9bedc3409e195a99bb3a31918c12182e7",
+  "payment_method=ideal",
+  "error_code=unprocessable_entity",
+  "error_details=invalid_signature;invalid_partner"
 {% endapi-method-response-example %}
 
 {% endapi-method-response %}
