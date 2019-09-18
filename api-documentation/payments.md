@@ -369,3 +369,87 @@ When one of the parameters is invalid, the JSON payload will inform about the er
 
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
+{% api-method method="get" host="https://app.clubcollect.com/api/v2/payments" path="/notifications" %}
+{% api-method-summary %}
+Payment notifications feed
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returns a list containing the status of payments for a company, sorted from newest to oldest payments. It can be used by partners to catch up with notifications that might have been dismissed or not processed correctly.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+
+{% api-method-parameter name="company_id" type="string" required=true %}
+Unique identifier of the company.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="signature" type="string" required=true %}
+Request signature.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="page" type="string" required=false %}
+Page number. If it's not given, default to `1`. There are 25 payments per page.
+{% endapi-method-parameter %}
+
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+When all the parameters are valid, the endpoint will return a list of payments, sorted from newest to oldest.
+{% endapi-method-response-example-description %}
+[
+  {
+      "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
+      "invoice_id": "e06be9959a6d5a1ce80caf97e3244d6024dd1",
+      "payment_id": "ae515fabdd886cd0c49408f9696c5498848977fe",
+      "payment_method": "ideal",
+      "payment_result": "authorized",
+      "external_invoice_number": "12345",
+      "created_at": "2019-09-15T10:10:56Z",
+      "updated_at": "2019-09-15T10:16:08Z",
+  },
+  {
+      "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
+      "invoice_id": "c1d2753d2cb41989e2dff1c13b0281123b3d72a8",
+      "payment_id": "e382a785a3d8651f35a09b794ed0853c7451fad4",
+      "payment_method": "ideal",
+      "payment_result": "pending",
+      "external_invoice_number": "67890",
+      "created_at": "2019-09-15T16:15:56Z",
+      "updated_at": "2019-09-15T16:38:07Z",
+  },
+  {
+      "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
+      "invoice_id": "fe75927e05ed3f14db1bac824433dae78c0f362b",
+      "payment_id": "494f8b65497213aedbf88d1c5f690a6935c37362",
+      "payment_method": "ideal",
+      "payment_result": "cancelled",
+      "external_invoice_number": "78531",
+      "created_at": "2019-09-16T12:23:56Z",
+      "updated_at": "2019-09-16T13:39:07Z",
+  },
+]
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=422 %}
+{% api-method-response-example-description %}
+When one of the parameters is invalid, the JSON payload will inform about the error.
+{% endapi-method-response-example-description %}
+{
+    "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
+    "error_code": "invalid_params",
+    "error_details": "invalid_company_id"
+}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+
+{% endapi-method-spec %}
+{% endapi-method %}
