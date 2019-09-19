@@ -920,7 +920,6 @@ Partner API Key.
 * `invalid_content_type`: `Content-Type: application/json` must be provided.
 * `payment_in_progress`: An invoice can't be credited or retracted if there's a payment in progress
 
-
 {% api-method method="delete" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
 {% api-method-summary %}
 Delete Invoice
@@ -982,3 +981,4 @@ Invoice successfully deleted.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
