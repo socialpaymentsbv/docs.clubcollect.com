@@ -926,7 +926,7 @@ Delete Invoice
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes an invoices. Note that invoice must not be transmited in order to perform this operations.
+Deletes an invoice. Deleting an invoice is possible only when it's not transmitted yet.
 {% endapi-method-description %}
 
 {% api-method-spec %}
