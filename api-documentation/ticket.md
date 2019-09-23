@@ -38,18 +38,18 @@ Partner API Key
 
 ```javascript
 "tickets": [
-  { 
-   "ticket_id": "...", 
-   "message": "I don't want to pay", 
-   "sender": "CUSTOMER", 
+  {
+   "ticket_id": "...",
+   "message": "I don't want to pay",
+   "sender": "CUSTOMER",
    "date": "..."
   },
-  { 
-   "ticket_id": "...", 
-   "message": "Please pay before the 30th", 
-   "sender": "COMPANY", 
+  {
+   "ticket_id": "...",
+   "message": "Please pay before the 30th",
+   "sender": "COMPANY",
    "date": "..."
-   } 
+   }
 ]
 ```
 {% endapi-method-response-example %}
@@ -112,10 +112,10 @@ Contents of the Ticket.
 {% endapi-method-response-example-description %}
 
 ```javascript
-{ 
-  "ticket_id": "...", 
-  "message": "Please pay before the 30th", 
-  "sender": "COMPANY", 
+{
+  "ticket_id": "...",
+  "message": "Please pay before the 30th",
+  "sender": "COMPANY",
   "date": "..."
 }
 ```
@@ -266,7 +266,7 @@ Fetch All Tickets
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Fetch all Tickets for a Company, filtered by Ticket status.
+Returns the list of tickets linked to a company, filtered by Ticket status, paginated and sorted in ascending order, i.e. from oldest to newest.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -279,6 +279,11 @@ One of: `{ unanswered answered archived }`
 {% api-method-parameter name="id" type="string" required=true %}
 ID of Company for which Tickets should be fetched.
 {% endapi-method-parameter %}
+
+{% api-method-parameter name="page" type="string" required=false %}
+Page requested. If not specified, default to `1`. Page size is `30`.
+{% endapi-method-parameter %}
+
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
@@ -290,20 +295,20 @@ ID of Company for which Tickets should be fetched.
 
 ```javascript
 "tickets": [
-  { 
-   "invoice_id": "...", 
-   "ticket_id": "...", 
-   "message": "I don't want to pay", 
-   "sender": "CUSTOMER", 
+  {
+   "invoice_id": "...",
+   "ticket_id": "...",
+   "message": "I don't want to pay",
+   "sender": "CUSTOMER",
    "date": "..."
   },
-  { 
-   "invoice_id": "...", 
-   "ticket_id": "...", 
-   "message": "Please pay before the 30th", 
-   "sender": "COMPANY", 
+  {
+   "invoice_id": "...",
+   "ticket_id": "...",
+   "message": "Please pay before the 30th",
+   "sender": "COMPANY",
    "date": "..."
-   } 
+   }
 ]
 "page": {
   "page_number": 1,
@@ -341,4 +346,3 @@ Supplied status value is invalid.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-

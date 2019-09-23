@@ -265,3 +265,79 @@ Batch successfully deleted.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+
+{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/companies/:id/imports" %}
+{% api-method-summary %}
+Fetch Company Imports
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returns the list of import batches created by a company, paginated and sorted in ascending order, i.e. from oldest to newest.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+
+{% api-method-request %}
+{% api-method-path-parameters %}
+
+{% api-method-parameter name="id" type="string" required=true %}
+ID of the company for which batches are requested.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="page" type="string" required=false %}
+Page requested. If not specified, default to `1`. Page size is `30`.
+{% endapi-method-parameter %}
+
+{% endapi-method-path-parameters %}
+
+
+{% endapi-method-path-parameters %}
+
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+"imports": [
+  {
+   "company_id": "477b4e18deb43367449d1ca74dc7f67b91e68ad3",
+   "import_id": "78d366d133d6e26e32106b645f92c899f410897c",
+   "title": "Membership fee 2019/1",
+   "transmitted": "true",
+   "transmitted_at": "2019-09-12T20:55:19Z"
+  },
+  {
+   "company_id": "477b4e18deb43367449d1ca74dc7f67b91e68ad3",
+   "import_id": "bffce68a7d109a9de3bfd3f3baacd06516492272",
+   "title": "Membership fee 2019/2",
+   "transmitted": "true",
+   "transmitted_at": "2019-09-116T15:53:08Z"
+  },
+]
+"page": {
+  "page_number": 1,
+  "total_pages": 1
+}
+
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+Company ID does not exist.
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "error": "not_found"
+}
+```
+{% endapi-method-response-example %}
+
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
