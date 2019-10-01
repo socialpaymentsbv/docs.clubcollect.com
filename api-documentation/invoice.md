@@ -240,7 +240,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="invoice\_lines\[\].invoice\_line\_id" type="string" required=false %}
-Optionally specify a custom identifier to overwrite an otherwise randomly generated identifier.
+Optionally specify a custom identifier to overwrite an otherwise randomly generated identifier. If given, the partner must ensure that the ID is unique. Requests with duplicate IDs will be rejected. 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="amount\_total\_cents" type="number" required=true %}
@@ -427,6 +427,7 @@ ID of Import to which the Invoice should belong.
 * `invalid_customer_phone`: Phone number may not be empty if no email address is provided.
 * `invalid_customer_address`: Address may not be empty if neither an email address nor phone number is provided.
 * `invalid_amount_total_cents`: `amount_total_cents` is not equal to the total of all invoice line amounts.
+* `duplicate_invoice_line_id`: The `duplicate_invoice_line_id` provided was already used for another invoice line.
 * `invalid_content_type`: `Content-Type: application/json` must be provided. 
 
 {% hint style="info" %}

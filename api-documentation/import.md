@@ -265,7 +265,6 @@ Batch successfully deleted.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
 {% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/companies/:id/imports" %}
 {% api-method-summary %}
 Fetch Company Imports
@@ -276,10 +275,8 @@ Returns the list of import batches created by a company, paginated and sorted in
 {% endapi-method-description %}
 
 {% api-method-spec %}
-
 {% api-method-request %}
 {% api-method-path-parameters %}
-
 {% api-method-parameter name="id" type="string" required=true %}
 ID of the company for which batches are requested.
 {% endapi-method-parameter %}
@@ -287,12 +284,7 @@ ID of the company for which batches are requested.
 {% api-method-parameter name="page" type="string" required=false %}
 Page requested. If not specified, default to `1`. Page size is `30`.
 {% endapi-method-parameter %}
-
 {% endapi-method-path-parameters %}
-
-
-{% endapi-method-path-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -322,7 +314,6 @@ Page requested. If not specified, default to `1`. Page size is `30`.
   "page_number": 1,
   "total_pages": 1
 }
-
 ```
 {% endapi-method-response-example %}
 
@@ -337,7 +328,7 @@ Company ID does not exist.
 }
 ```
 {% endapi-method-response-example %}
-
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+

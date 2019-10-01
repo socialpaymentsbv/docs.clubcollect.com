@@ -184,7 +184,7 @@ Partner API Key
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -240,7 +240,7 @@ Partner API Key.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -283,7 +283,6 @@ ID of Company for which Tickets should be fetched.
 {% api-method-parameter name="page" type="string" required=false %}
 Page requested. If not specified, default to `1`. Page size is `30`.
 {% endapi-method-parameter %}
-
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
@@ -316,7 +315,6 @@ Page requested. If not specified, default to `1`. Page size is `30`.
   "total_entries": 53,
   "total_pages": 5
 }
-
 ```
 {% endapi-method-response-example %}
 
@@ -346,3 +344,4 @@ Supplied status value is invalid.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
