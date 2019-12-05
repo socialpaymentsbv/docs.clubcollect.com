@@ -55,7 +55,8 @@ Partner API Key
       "prefix": "Mr", 
       "first_name": "Joe", 
       "infix": "van der", 
-      "last_name": "Doe"
+      "last_name": "Doe",
+      "organization": "TheClub"
     },
     "address": { 
       "address1": "3rd Avenue", 
@@ -283,6 +284,10 @@ May be empty if \`phone\_number\` is provided.
 
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="customer.name.organization" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="external\_invoice\_number" type="string" required=true %}
 
 {% endapi-method-parameter %}
@@ -318,7 +323,8 @@ ID of Import to which the Invoice should belong.
       "prefix": "Mr", 
       "first_name": "Joe", 
       "infix": "van der", 
-      "last_name": "Doe"
+      "last_name": "Doe",
+      "organization": "TheClub"
     },
     "address": { 
       "address1": "3rd Avenue", 
@@ -379,7 +385,8 @@ ID of Import to which the Invoice should belong.
       "prefix": "Mr", 
       "first_name": "Joe", 
       "infix": "van der", 
-      "last_name": "Doe"
+      "last_name": "Doe",
+      "organization": "TheClub"
     },
     "address": { 
       "address1": "3rd Avenue", 
@@ -494,7 +501,8 @@ Partner API Key
       "prefix": "Mr", 
       "first_name": "Joe", 
       "infix": "van der", 
-      "last_name": "Doe"
+      "last_name": "Doe",
+      "organization": "TheClub"
     },
     "address": { 
       "address1": "3rd Avenue", 
@@ -577,7 +585,8 @@ Partner API Key
       "prefix": "Mr", 
       "first_name": "Joe", 
       "infix": "van der", 
-      "last_name": "Doe"
+      "last_name": "Doe",
+      "organization": "TheClub"
     },
     "address": { 
       "address1": "3rd Avenue", 
@@ -673,7 +682,8 @@ Partner API Key
       "prefix": "Mr", 
       "first_name": "Joe", 
       "infix": "van der", 
-      "last_name": "Doe"
+      "last_name": "Doe",
+      "organization": "TheClub"
     },
     "address": { 
       "address1": "3rd Avenue", 
@@ -832,7 +842,8 @@ Partner API Key.
       "prefix": "Mr", 
       "first_name": "Joe", 
       "infix": "van der", 
-      "last_name": "Doe"
+      "last_name": "Doe",
+      "organization": "TheClub"
     },
     "address": { 
       "address1": "3rd Avenue", 
