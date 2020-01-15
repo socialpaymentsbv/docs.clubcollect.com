@@ -20,5 +20,4 @@
 * [Ticket](api-documentation/ticket.md)
 * [Notifications](api-documentation/notifications.md)
 * [Payments](api-documentation/payments.md)
-* [Untitled](api-documentation/untitled.md)
 

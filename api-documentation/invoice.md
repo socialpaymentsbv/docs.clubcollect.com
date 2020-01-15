@@ -241,7 +241,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="invoice\_lines\[\].invoice\_line\_id" type="string" required=false %}
-Optionally specify a custom identifier to overwrite an otherwise randomly generated identifier. If given, the partner must ensure that the ID is unique. Requests with duplicate IDs will be rejected. 
+Optionally specify a custom identifier to overwrite an otherwise randomly generated identifier. If given, the partner must ensure that the ID is unique. Requests with duplicate IDs will be rejected.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="amount\_total\_cents" type="number" required=true %}
@@ -272,11 +272,11 @@ May be empty if \`email\_address\` or \`phone\_number\` is provided\`
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="customer.address.house_number" type="string" required=false %}
+{% api-method-parameter name="customer.address.house\_number" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="customer.address.house_number_extension" type="string" required=false %}
+{% api-method-parameter name="customer.address.house\_number\_extension" type="string" required=false %}
 
 {% endapi-method-parameter %}
 

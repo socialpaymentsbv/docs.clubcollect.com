@@ -10,24 +10,17 @@ Start Payment
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows to start a new payment and redirects the user to the payment page.To start the payment session, the partner needs to generate the payment URL with the required parameters and add a signature to avoid tampering with data.
-
-Payments will always be linked to an invoice in ClubCollect. The invoice will be created ad hoc from the parameters received in the request, unless the partner provides the `invoice_id` of an existing invoice to be paid.
-
-When the `invoice_id` is given, the payment will be generated for the total amount due for the invoice.The invoices that are generated ad hoc are grouped in batches, per month.
-
-These batches can be found on :`https://app.clubcollect.com/treasurer/import_batches`,
-
-named `iDEAL (<year>-<month>)` by default, e.g. `iDEAL (2019-08)`.
+This endpoint allows to start a new payment and redirects the user to the payment page.To start the payment session, the partner needs to generate the payment URL with the required parameters and add a signature to avoid tampering with data.Payments will always be linked to an invoice in ClubCollect. The invoice will be created ad hoc from the parameters received in the request, unless the partner provides the `invoice_id` of an existing invoice to be paid.When the `invoice_id` is given, the payment will be generated for the total amount due for the invoice.The invoices that are generated ad hoc are grouped in batches, per month.These batches can be found on :`https://app.clubcollect.com/treasurer/import_batches`,named `iDEAL (<year>-<month>)` by default, e.g. `iDEAL (2019-08)`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="payment\_method" type="string" required=true %}
-Payment Method (allowed: ideal, bancontact)
+Payment Method \(allowed: ideal, bancontact\)
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
 {% api-method-query-parameters %}
 {% api-method-parameter name="company\_id" type="string" required=true %}
 Unique identifier of the company receiver of the payment.
@@ -117,7 +110,7 @@ Payee phone number.
 The payment request is valid, the payee is redirected to the payment page and completes the payment process. The user will be redirected to the `redirect_url` specified by the partner in the payment request and the parameters listed below will be appended to the URL. The signature added by ClubCollect will be generated only for these parameters added by ClubCollect.
 {% endapi-method-response-example-description %}
 
-```
+```text
   company_id=<unique-company-id>&
   invoice_id=<unique-invoice-id>&
   external_invoice_number=<unique-partner-invoice-number>&
@@ -132,7 +125,7 @@ The payment request is valid, the payee is redirected to the payment page and co
 The payment request has any invalid parameters, or any required parameter is not given. ClubCollect will redirect to the \`redirect\_url\` provided by the partner appending \`error\_code\` and \`error\_details\` to the response.
 {% endapi-method-response-example-description %}
 
-```
+```text
   company_id=25b39de9bedc3409e195a99bb3a31918c12182e7&
   payment_method=ideal&
   error_code=unprocessable_entity&
@@ -143,7 +136,7 @@ The payment request has any invalid parameters, or any required parameter is not
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Signature
+## Signature
 
 To ensure authenticity and data integrity of incoming payment requests ClubCollect requires these requests to be signed. This signature is based on a Hash-based Message Authentication Code \(HMAC\) calculated using a request's key-value pairs and a secret key, which is known only to the partner and ClubCollect.
 
@@ -169,8 +162,6 @@ Note that code snippets are provided in Ruby.
 
 partner API key: `3ac2bf2359c1eb184fe0fea01f624bc1d8581981`
 
-
-
 1. Discard key-value pairs for which value is null or an empty string
 
 | key | value |
@@ -184,7 +175,7 @@ partner API key: `3ac2bf2359c1eb184fe0fea01f624bc1d8581981`
 | `company_id` | `d4b8772c67154a6bced8a8b827e177cc00111fe0` |
 | `payment_reference` | `Club membership 2019/` |
 
-2. Sort the key-value pairs by key.
+1. Sort the key-value pairs by key.
 
 | key | value |
 | :--- | :--- |
@@ -197,7 +188,7 @@ partner API key: `3ac2bf2359c1eb184fe0fea01f624bc1d8581981`
 | `payment_reference` | `Club membership 2019/2` |
 | `redirect_url` | `http://partner-test.nl` |
 
-3. Concatenate every key-value pair on the list obtained in the previous step to get the signing string
+1. Concatenate every key-value pair on the list obtained in the previous step to get the signing string
 
 ```text
 signing_string = params.keys.sort.flat_map { |k| [k, params[k]] }.join
@@ -207,7 +198,7 @@ signing_string = params.keys.sort.flat_map { |k| [k, params[k]] }.join
 amount_cents1000company_idd4b8772c67154a6bced8a8b827e177cc00111fe0country_codeNLexternal_invoice_number123456first_nameJohnlast_nameDoepayment_referenceClub membership 2019/2redirect_urlhttp://partner-test.nl
 ```
 
-4. Calculate SHA256 digest of the signing string
+1. Calculate SHA256 digest of the signing string
 
 ```text
 digested_content = Digest::SHA256.digest(signing_string)
@@ -217,31 +208,31 @@ digested_content = Digest::SHA256.digest(signing_string)
 \tD!()\xAFL\xED\x069\xC0\xEC\x11/\xB3\x93\xFAM\xC0\xA9\xE7\x03\x03\e\xDC\xDFF\x9FZ\x15\xD6\xD1
 ```
 
-5. Calculate HMAC SHA-256 signature of digested signing string using the API key.
+1. Calculate HMAC SHA-256 signature of digested signing string using the API key.
 
 ```text
 hmac_binary = OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha256'), api_key, digested_content)
 ```
 
-6. Encode the result from binary to hexadecimal
+1. Encode the result from binary to hexadecimal
 
 ```text
 signature = hmac_binary.unpack1('H*')
 ```
 
-7. The signature calculated for the example key-value pairs and API key is:
+1. The signature calculated for the example key-value pairs and API key is:
 
 ```text
 754966cc8946c8125b365fcb5cf0e27edd98fe7516de7ea17f1b5254bcf7a00e
 ```
 
-8. After the signature is generated, it has to be appended to the url query string as
+1. After the signature is generated, it has to be appended to the url query string as
 
 ```text
 &signature=754966cc8946c8125b365fcb5cf0e27edd98fe7516de7ea17f1b5254bcf7a00e`
 ```
 
-### Payment response
+## Payment response
 
 Once the users finish the payment process, they are redirected to a result page of your choice, included in the payment request as `redirect_url`.
 
@@ -259,7 +250,7 @@ The `payment_result` can have one of these values:
 * `pending` - the payment is submitted for processing but the payment provider hasn't sent yet the result
 * `error` - the request was invalid or there was a general error on provider side \(payment state is unknown\)
 
-### Payment notifications
+## Payment notifications
 
 For some online payment methods such as iDEAL, the outcome of the payment request might take several hours to confirm. As soon as ClubCollect receives any update from the payment provider, a payment notification will be sent to the partner to communicate any change in the payment status.
 
@@ -305,7 +296,7 @@ Unique identifier of the company receiver of the payment.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="signature" type="string" required=true %}
-Should include \`payment\_id\`  and \`company\_id\`
+Should include \`payment\_id\` and \`company\_id\`
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -316,7 +307,7 @@ Should include \`payment\_id\`  and \`company\_id\`
 When all the parameters are valid, the endpoint will return a JSON payload informing about the current status of the payment similar to the payload in the payment notifications.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
     "invoice_id": "e06be9959a6d5ad6e1ce80caf97e3244d6024dd1",
@@ -335,7 +326,7 @@ When all the parameters are valid, the endpoint will return a JSON payload infor
 When any of the parameters is invalid, the JSON payload will inform about the error.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
     "error_code": "invalid_params",
@@ -379,7 +370,7 @@ Page number. If it's not given, default to `1`. There are 25 payments per page.
 When all the parameters are valid, the endpoint will return a list of payments, sorted from newest to oldest.
 {% endapi-method-response-example-description %}
 
-```
+```text
 [
   {
       "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
@@ -420,7 +411,7 @@ When all the parameters are valid, the endpoint will return a list of payments, 
 When one of the parameters is invalid, the JSON payload will inform about the error.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "company_id": "25b39de9bedc3409e195a99bb3a31918c12182e7",
     "error_code": "invalid_params",
@@ -431,6 +422,4 @@ When one of the parameters is invalid, the JSON payload will inform about the er
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 
