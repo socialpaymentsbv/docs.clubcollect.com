@@ -4,25 +4,30 @@ description: Use ClubCollect as your payment provider
 
 # Payments
 
-{% api-method method="get" host="https://app.clubcollect.com/api/v2/payments" path="/ideal" %}
+{% api-method method="get" host="https://app.clubcollect.com/api/v2/payments" path="/:payment\_method" %}
 {% api-method-summary %}
-iDEAL payments
+Start Payment
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows to start a new iDEAL payment and redirects the user to the payment page.To start the payment session, the partner needs to generate the payment URL with the required parameters and add a signature to avoid tampering with data.  
-  
-Payments will always be linked to an invoice in ClubCollect. The invoice will be created ad hoc from the parameters received in the request, unless the partner provides the `invoice_id` of an existing invoice to be paid.   
-  
-When the `invoice_id` is given, the payment will be generated for the total amount due for the invoice.The invoices that are generated ad hoc are grouped in batches, per month.   
-  
-These batches can be found on :`https://app.clubcollect.com/treasurer/import_batches`,   
-  
-named `iDEAL (<year>-<month>)` by default, e.g. `iDEAL (2019-08)`.  
+This endpoint allows to start a new payment and redirects the user to the payment page.To start the payment session, the partner needs to generate the payment URL with the required parameters and add a signature to avoid tampering with data.
+
+Payments will always be linked to an invoice in ClubCollect. The invoice will be created ad hoc from the parameters received in the request, unless the partner provides the `invoice_id` of an existing invoice to be paid.
+
+When the `invoice_id` is given, the payment will be generated for the total amount due for the invoice.The invoices that are generated ad hoc are grouped in batches, per month.
+
+These batches can be found on :`https://app.clubcollect.com/treasurer/import_batches`,
+
+named `iDEAL (<year>-<month>)` by default, e.g. `iDEAL (2019-08)`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="payment\_method" type="string" required=true %}
+Payment Method (allowed: ideal, bancontact)
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="company\_id" type="string" required=true %}
 Unique identifier of the company receiver of the payment.
