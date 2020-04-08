@@ -260,7 +260,7 @@ Partner API Key.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/companies/:id/:status" %}
+{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/companies/:id/tickets/:status" %}
 {% api-method-summary %}
 Fetch All Tickets
 {% endapi-method-summary %}
