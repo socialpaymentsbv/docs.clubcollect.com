@@ -279,11 +279,18 @@ One of: `{ unanswered answered archived }`
 {% api-method-parameter name="id" type="string" required=true %}
 ID of Company for which Tickets should be fetched.
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="page" type="string" required=false %}
-Page requested. If not specified, default to `1`. Page size is `30`.
-{% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="api\_key" type="string" required=true %}
+Partner API Key.
+{% endapi-method-parameter %}
+{% api-method-parameter name="page\_number" type="integer" required=false %}
+Page number. If it's not given, default to `1`.
+{% endapi-method-parameter %}
+{% api-method-parameter name="page\_size" type="integer" required=false %}
+Number of results per page. If it's not given, default to `30`. Maximum permitted value is `100`.
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -344,4 +351,3 @@ Supplied status value is invalid.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
