@@ -43,39 +43,39 @@ Partner API Key
 ```javascript
 {
   "invoice_id": "...",
-  "import_id": "...", 
-  "external_invoice_number": "2014-342-545", 
+  "import_id": "...",
+  "external_invoice_number": "2014-342-545",
   "reference": "ba6fe77",
   "invoice_number": "123456",
-  "direct_debit_iban": "...", 
-  "federation_membership_number": "...", 
-  "club_membership_number": "...", 
+  "direct_debit_iban": "...",
+  "federation_membership_number": "...",
+  "club_membership_number": "...",
   "customer": {
-    "name": { 
-      "prefix": "Mr", 
-      "first_name": "Joe", 
-      "infix": "van der", 
+    "name": {
+      "prefix": "Mr",
+      "first_name": "Joe",
+      "infix": "van der",
       "last_name": "Doe",
       "organization": "TheClub"
     },
-    "address": { 
-      "address1": "3rd Avenue", 
-      "address2": "", 
-      "locality": "", 
-      "house_number": "1500", 
-      "state": "", 
-      "zipcode": "10010", 
-      "city": "Amsterdam", 
+    "address": {
+      "address1": "3rd Avenue",
+      "address2": "",
+      "locality": "",
+      "house_number": "1500",
+      "state": "",
+      "zipcode": "10010",
+      "city": "Amsterdam",
       "country_code": "NL"
     },
-    "email": { 
+    "email": {
       "email_address": "joe@example.com"
     },
-    "phone": { 
-      "phone_number": "562-756-2233", 
+    "phone": {
+      "phone_number": "562-756-2233",
       "country_code": "NL"
     }
-  }, 
+  },
   "invoice_lines": [        
     {
       "invoice_line_id": "...",            
@@ -151,35 +151,35 @@ Partner API Key
       "date": "..."        
     }    
   ],
-  "amount_total_cents": "...", 
+  "amount_total_cents": "...",
   "messages": [
-    { 
-      "message_id": "...", 
-      "type": "EMAIL|SMS|LETTER", 
-      "description": "...", 
-      "date": "..."
-    },
-    { 
-      "message_id": "...", 
+    {
+      "message_id": "...",
       "type": "EMAIL|SMS|LETTER",
-      "description": "...", 
-      "date": "..."} 
-  ], 
-  "tickets": [
-    { 
-      "ticket_id": "...", 
-      "message": "I don't want to pay", 
-      "sender": "CUSTOMER", 
+      "description": "...",
       "date": "..."
     },
-    { 
-      "ticket_id": "...", 
-      "message": "You really must pay", 
-      "sender": "COMPANY", 
-      "date": "..."} 
-  ], 
-  "retracted_at": null | "...", 
-  "retraction_reason": null | "...", 
+    {
+      "message_id": "...",
+      "type": "EMAIL|SMS|LETTER",
+      "description": "...",
+      "date": "..."}
+  ],
+  "tickets": [
+    {
+      "ticket_id": "...",
+      "message": "I don't want to pay",
+      "sender": "CUSTOMER",
+      "date": "..."
+    },
+    {
+      "ticket_id": "...",
+      "message": "You really must pay",
+      "sender": "COMPANY",
+      "date": "..."}
+  ],
+  "retracted_at": null | "...",
+  "retraction_reason": null | "...",
   "show_retraction_reason_to_customer": true | false
 }
 ```
@@ -331,39 +331,39 @@ ID of Import to which the Invoice should belong.
 ```javascript
 {
   "invoice_id": "...",
-  "import_id": "...", 
-  "external_invoice_number": "2014-342-545", 
+  "import_id": "...",
+  "external_invoice_number": "2014-342-545",
   "reference": "ba6fe77",
   "invoice_number": "123456",
-  "direct_debit_iban": "...", 
-  "federation_membership_number": "...", 
-  "club_membership_number": "...", 
+  "direct_debit_iban": "...",
+  "federation_membership_number": "...",
+  "club_membership_number": "...",
   "customer": {
-    "name": { 
-      "prefix": "Mr", 
-      "first_name": "Joe", 
-      "infix": "van der", 
+    "name": {
+      "prefix": "Mr",
+      "first_name": "Joe",
+      "infix": "van der",
       "last_name": "Doe",
       "organization": "TheClub"
     },
-    "address": { 
-      "address1": "3rd Avenue", 
-      "address2": "", 
-      "locality": "", 
-      "house_number": "1500", 
-      "state": "", 
-      "zipcode": "10010", 
-      "city": "Amsterdam", 
+    "address": {
+      "address1": "3rd Avenue",
+      "address2": "",
+      "locality": "",
+      "house_number": "1500",
+      "state": "",
+      "zipcode": "10010",
+      "city": "Amsterdam",
       "country_code": "NL"
     },
-    "email": { 
+    "email": {
       "email_address": "joe@example.com"
     },
-    "phone": { 
-      "phone_number": "562-756-2233", 
+    "phone": {
+      "phone_number": "562-756-2233",
       "country_code": "NL"
     }
-  }, 
+  },
   "invoice_lines": [        
     {
       "invoice_line_id": "...",            
@@ -372,15 +372,15 @@ ID of Import to which the Invoice should belong.
       "description": "Membership fee",            
       "date": "..."        
     },
-    { 
-      "invoice_line_id": "...", 
-      "amount_cents": -1000, 
+    {
+      "invoice_line_id": "...",
+      "amount_cents": -1000,
       "description": "Deduction",
-      "date": "..." 
+      "date": "..."
     }
   ],
   "amount_total_cents": 9000,
-  "tickets": [], 
+  "tickets": [],
   "messages": []
 }
 ```
@@ -393,39 +393,39 @@ ID of Import to which the Invoice should belong.
 
 ```javascript
 {
-  "import_id": "...", 
-  "external_invoice_number": "2014-342-545", 
+  "import_id": "...",
+  "external_invoice_number": "2014-342-545",
   "reference": "ba6fe77",
-  "direct_debit_iban": "...", 
-  "federation_membership_number": "...", 
-  "club_membership_number": "...", 
+  "direct_debit_iban": "...",
+  "federation_membership_number": "...",
+  "club_membership_number": "...",
   "locale": "en",
   "customer": {
-    "name": { 
-      "prefix": "Mr", 
-      "first_name": "Joe", 
-      "infix": "van der", 
+    "name": {
+      "prefix": "Mr",
+      "first_name": "Joe",
+      "infix": "van der",
       "last_name": "Doe",
       "organization": "TheClub"
     },
-    "address": { 
-      "address1": "3rd Avenue", 
-      "address2": "", 
-      "locality": "", 
-      "house_number": "1500", 
-      "state": "", 
-      "zipcode": "10010", 
-      "city": "Amsterdam", 
+    "address": {
+      "address1": "3rd Avenue",
+      "address2": "",
+      "locality": "",
+      "house_number": "1500",
+      "state": "",
+      "zipcode": "10010",
+      "city": "Amsterdam",
       "country_code": "NL"
     },
-    "email": { 
+    "email": {
       "email_address": "joe@example.com"
     },
-    "phone": { 
-      "phone_number": "562-756-2233", 
+    "phone": {
+      "phone_number": "562-756-2233",
       "country_code": "NL"
-    } 
-  }, 
+    }
+  },
   "invoice_lines": [        
     {
       "invoice_line_id": "...",            
@@ -434,11 +434,11 @@ ID of Import to which the Invoice should belong.
       "description": "Membership fee",            
       "date": "..."        
     },
-    { 
-      "invoice_line_id": "...", 
-      "amount_cents": -1000, 
+    {
+      "invoice_line_id": "...",
+      "amount_cents": -1000,
       "description": "Deduction",
-      "date": "..." 
+      "date": "..."
     }
   ],
   "amount_total_cents": 9000
@@ -455,7 +455,7 @@ ID of Import to which the Invoice should belong.
 * `invalid_customer_address`: Address may not be empty if neither an email address nor phone number is provided.
 * `invalid_amount_total_cents`: `amount_total_cents` is not equal to the total of all invoice line amounts.
 * `duplicate_invoice_line_id`: The `duplicate_invoice_line_id` provided was already used for another invoice line.
-* `invalid_content_type`: `Content-Type: application/json` must be provided. 
+* `invalid_content_type`: `Content-Type: application/json` must be provided.
 
 {% hint style="info" %}
 **Note** the total may be zero \(nothing to receive\) or negative \(something to receive\).
@@ -509,39 +509,39 @@ Partner API Key
 
 ```javascript
 {
-  "import_id": "...", 
-  "external_invoice_number": "2014-342-545", 
+  "import_id": "...",
+  "external_invoice_number": "2014-342-545",
   "reference": "ba6fe77",
   "invoice_number": "123456",
-  "direct_debit_iban": "...", 
-  "federation_membership_number": "...", 
-  "club_membership_number": "...", 
+  "direct_debit_iban": "...",
+  "federation_membership_number": "...",
+  "club_membership_number": "...",
   "customer": {
-    "name": { 
-      "prefix": "Mr", 
-      "first_name": "Joe", 
-      "infix": "van der", 
+    "name": {
+      "prefix": "Mr",
+      "first_name": "Joe",
+      "infix": "van der",
       "last_name": "Doe",
       "organization": "TheClub"
     },
-    "address": { 
-      "address1": "3rd Avenue", 
-      "address2": "", 
-      "locality": "", 
-      "house_number": "1500", 
-      "state": "", 
-      "zipcode": "10010", 
-      "city": "Amsterdam", 
+    "address": {
+      "address1": "3rd Avenue",
+      "address2": "",
+      "locality": "",
+      "house_number": "1500",
+      "state": "",
+      "zipcode": "10010",
+      "city": "Amsterdam",
       "country_code": "NL"
     },
-    "email": { 
+    "email": {
       "email_address": "joe@example.com"
     },
-    "phone": { 
-      "phone_number": "562-756-2233", 
+    "phone": {
+      "phone_number": "562-756-2233",
       "country_code": "NL"
     }
-  }, 
+  },
   "invoice_lines": [        
     {
       "invoice_line_id": "...",            
@@ -550,15 +550,15 @@ Partner API Key
       "description": "Membership fee",            
       "date": "..."        
     },
-    { 
-      "invoice_line_id": "...", 
-      "amount_cents": -1000, 
+    {
+      "invoice_line_id": "...",
+      "amount_cents": -1000,
       "description": "Deduction",
-      "date": "..." 
+      "date": "..."
     }
   ],
   "amount_total_cents": 9000,
-  "tickets": [], 
+  "tickets": [],
   "messages": []
 }
 ```
@@ -595,36 +595,36 @@ Partner API Key
 
 ```javascript
 {
-  "external_invoice_number": "2014-342-545", 
+  "external_invoice_number": "2014-342-545",
   "reference": "ba6fe77",
-  "direct_debit_iban": "...", 
-  "federation_membership_number": "...", 
-  "club_membership_number": "...", 
+  "direct_debit_iban": "...",
+  "federation_membership_number": "...",
+  "club_membership_number": "...",
   "customer": {
-    "name": { 
-      "prefix": "Mr", 
-      "first_name": "Joe", 
-      "infix": "van der", 
+    "name": {
+      "prefix": "Mr",
+      "first_name": "Joe",
+      "infix": "van der",
       "last_name": "Doe",
       "organization": "TheClub"
     },
-    "address": { 
-      "address1": "3rd Avenue", 
-      "address2": "", 
-      "locality": "", 
-      "house_number": "1500", 
-      "state": "", 
-      "zipcode": "10010", 
-      "city": "Amsterdam", 
+    "address": {
+      "address1": "3rd Avenue",
+      "address2": "",
+      "locality": "",
+      "house_number": "1500",
+      "state": "",
+      "zipcode": "10010",
+      "city": "Amsterdam",
       "country_code": "NL"
     },
-    "email": { 
+    "email": {
       "email_address": "joe@example.com"
     },
-    "phone": { 
-      "phone_number": "562-756-2233", 
+    "phone": {
+      "phone_number": "562-756-2233",
       "country_code": "NL"
-    } 
+    }
   },
 }
 ```
@@ -690,39 +690,39 @@ Partner API Key
 
 ```javascript
 {
-  "import_id": "...", 
-  "external_invoice_number": "2014-342-545", 
+  "import_id": "...",
+  "external_invoice_number": "2014-342-545",
   "reference": "ba6fe77",
   "invoice_number": "123456",
-  "direct_debit_iban": "...", 
-  "federation_membership_number": "...", 
-  "club_membership_number": "...", 
+  "direct_debit_iban": "...",
+  "federation_membership_number": "...",
+  "club_membership_number": "...",
   "customer": {
-    "name": { 
-      "prefix": "Mr", 
-      "first_name": "Joe", 
-      "infix": "van der", 
+    "name": {
+      "prefix": "Mr",
+      "first_name": "Joe",
+      "infix": "van der",
       "last_name": "Doe",
       "organization": "TheClub"
     },
-    "address": { 
-      "address1": "3rd Avenue", 
-      "address2": "", 
-      "locality": "", 
-      "house_number": "1500", 
-      "state": "", 
-      "zipcode": "10010", 
-      "city": "Amsterdam", 
+    "address": {
+      "address1": "3rd Avenue",
+      "address2": "",
+      "locality": "",
+      "house_number": "1500",
+      "state": "",
+      "zipcode": "10010",
+      "city": "Amsterdam",
       "country_code": "NL"
     },
-    "email": { 
+    "email": {
       "email_address": "joe@example.com"
     },
-    "phone": { 
-      "phone_number": "562-756-2233", 
+    "phone": {
+      "phone_number": "562-756-2233",
       "country_code": "NL"
     }
-  }, 
+  },
   "invoice_lines": [        
     {
       "invoice_line_id": "...",            
@@ -731,15 +731,15 @@ Partner API Key
       "description": "Membership fee",            
       "date": "..."        
     },
-    { 
-      "invoice_line_id": "...", 
-      "amount_cents": -1000, 
+    {
+      "invoice_line_id": "...",
+      "amount_cents": -1000,
       "description": "Deduction",
-      "date": "..." 
+      "date": "..."
     }
   ],
   "amount_total_cents": 9000,
-  "tickets": [], 
+  "tickets": [],
   "messages": []
 }
 ```
@@ -775,14 +775,14 @@ Partner API Key
 ## Example Request Body
 
 ```javascript
-{ 
-  "external_invoice_number": "2014-342-545", 
-  "invoice_lines": [ 
+{
+  "external_invoice_number": "2014-342-545",
+  "invoice_lines": [
     {
       "amount_cents": -10000,
-      "description": "Credit membership fee" 
-    } 
-  ], 
+      "description": "Credit membership fee"
+    }
+  ],
   "amount_total_cents": 0
 }
 ```
@@ -831,6 +831,10 @@ Partner API Key.
 
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="external\_invoice\_number" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="retraction\_reason" type="string" required=false %}
 
 {% endapi-method-parameter %}
@@ -850,39 +854,39 @@ Partner API Key.
 ```javascript
 {
   "invoice_id": "...",
-  "import_id": "...", 
-  "external_invoice_number": "2014-342-545", 
+  "import_id": "...",
+  "external_invoice_number": "2014-342-545",
   "reference": "ba6fe77",
   "invoice_number": "123456",
-  "direct_debit_iban": "...", 
-  "federation_membership_number": "...", 
-  "club_membership_number": "...", 
+  "direct_debit_iban": "...",
+  "federation_membership_number": "...",
+  "club_membership_number": "...",
   "customer": {
-    "name": { 
-      "prefix": "Mr", 
-      "first_name": "Joe", 
-      "infix": "van der", 
+    "name": {
+      "prefix": "Mr",
+      "first_name": "Joe",
+      "infix": "van der",
       "last_name": "Doe",
       "organization": "TheClub"
     },
-    "address": { 
-      "address1": "3rd Avenue", 
-      "address2": "", 
-      "locality": "", 
-      "house_number": "1500", 
-      "state": "", 
-      "zipcode": "10010", 
-      "city": "Amsterdam", 
+    "address": {
+      "address1": "3rd Avenue",
+      "address2": "",
+      "locality": "",
+      "house_number": "1500",
+      "state": "",
+      "zipcode": "10010",
+      "city": "Amsterdam",
       "country_code": "NL"
     },
-    "email": { 
+    "email": {
       "email_address": "joe@example.com"
     },
-    "phone": { 
-      "phone_number": "562-756-2233", 
+    "phone": {
+      "phone_number": "562-756-2233",
       "country_code": "NL"
     }
-  }, 
+  },
   "invoice_lines": [        
     {
       "invoice_line_id": "...",            
@@ -891,15 +895,15 @@ Partner API Key.
       "description": "Membership fee",            
       "date": "..."        
     },
-    { 
-      "invoice_line_id": "...", 
-      "amount_cents": -1000, 
+    {
+      "invoice_line_id": "...",
+      "amount_cents": -1000,
       "description": "Deduction",
-      "date": "..." 
+      "date": "..."
     }
   ],
   "amount_total_cents": 9000,
-  "tickets": [], 
+  "tickets": [],
   "messages": []
 }
 ```
@@ -935,18 +939,18 @@ Partner API Key.
 ## Example Request Body
 
 ```javascript
-{ 
-  "external_invoice_number": "2014-342-545", 
-  "description": "Cash payment", 
-  "retraction_reason": "Paid by cash", 
-  "show_retraction_reason_to_customer": true 
+{
+  "external_invoice_number": "2014-342-545",
+  "description": "Cash payment",
+  "retraction_reason": "Paid by cash",
+  "show_retraction_reason_to_customer": true
 }
 ```
 
 ## Error Messages
 
 * `invalid_invoice_id`: No invoice with this ID could be found.
-* `invalid_external_invoice_number`
+* `invalid_external_invoice_number`: min. 1 character
 * `invalid_description`: `description` must be provided.
 * `already_retracted`: The invoice with this ID has already been retracted.
 * `invalid_content_type`: `Content-Type: application/json` must be provided.
@@ -1013,4 +1017,3 @@ Invoice successfully deleted.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
