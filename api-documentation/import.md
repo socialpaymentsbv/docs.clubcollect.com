@@ -169,13 +169,24 @@ Partner API Key
 {% endapi-method-request %}
 
 {% api-method-response %}
-{% api-method-response-example httpCode=204 %}
+{% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
 Batch successfully transmitted.
 {% endapi-method-response-example-description %}
 
-```text
-
+```javascript
+{
+  "import_id": "a1f3216863ba5d5424dcbace46ab37be98d70c92",
+  "title": "Membership fees 2016/02",
+  "transmitted": true,
+  "transmitted_at": "2016-02-12T20:55:19Z",
+  "prepaid_amount_cents": 0,
+  "prepaid_amount_currency": "EUR",
+  "settled_amount_cents": 0,
+  "settled_amount_currency": "EUR",
+  "invoice_ids": [
+  ]
+}
 ```
 {% endapi-method-response-example %}
 
