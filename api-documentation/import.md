@@ -382,8 +382,16 @@ Returns the list of import batches created by a company, paginated and sorted in
 ID of the company for which batches are requested.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="page" type="string" required=false %}
-Page requested. If not specified, default to `1`. Page size is `30`.
+{% api-method-parameter name="api_key" type="string" required=true %}
+The token that is used to authenticate requests against the ClubCollect API. 
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="page_number" type="string" required=false %}
+Page number requested. If not specified, default to `1`.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="page_size" type="string" required=false %}
+Number of results per page. If not specified, default to `30`.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
