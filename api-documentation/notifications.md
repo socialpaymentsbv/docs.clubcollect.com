@@ -4,9 +4,16 @@ description: Receive updates from ClubCollect
 
 # Notifications
 
-ClubCollect sends out notifications to Partners regarding changes to Invoices and Import Batches. Notifications are sent out on a regular basis every ten minutes. A Partner must set up an endpoint to receive these notifications via an HTTP POST request containing a JSON body. This endpoint should be communicated to ClubCollect before going live with an integration.
+ClubCollect sends out notifications to Partners regarding changes to Invoices and Import Batches. Notifications are sent out on a regular basis every ten minutes.
 
-The format of the request body is as follows:
+Notifications are sent as HTTPS callbacks \(webhooks\) to an endpoint on your server. To receive notifications, you need a server that has:
+
+* An endpoint that can accept a JSON payload in an HTTP POST request.
+* An open TCP port for HTTPS traffic
+
+This endpoint should be communicated to ClubCollect before going live with the payment integration.
+
+The format of the JSON payload sent in the notifications is as follows:
 
 ```javascript
 {
@@ -34,3 +41,22 @@ This covers all data with regards to an invoice, including notifications of paym
 To avoid overloading the server, requests should be spread out rather than being executed at once.
 {% endhint %}
 
+ClubCollect expects a 200 OK as a confirmation of receipt of the notifications. If the Partner's endpoint does not return a 200 OK, ClubCollect will include the notifications that have not been confirmed in the next round of notifications sent.
+
+## Real-time \(synchronous\) Notifications
+
+Besides the notifications that ClubCollect sends asynchronously in groups every ten minutes, which are enabled by default and of mandatory implementation, a Partner may also receive updates synchronously whenever there is an update in a single invoice. This type of notifications are disabled by default and can be enabled upon request to ClubCollect.
+
+Real-time are sent to the same endpoint as the asynchronous notifications. The format of the payload is the same, though for this type of notifications, only one invoice id will be provided per request.
+
+```javascript
+{
+  "api_key": "7742c368f2dce09b78ddcaf50c61cd238b8e99cb",
+  "invoice_ids": [
+    "912ebbcef7c775b0d00dc098cd7e213c6dbf8ci3"
+  ],
+  "import_ids": [ ]
+}
+```
+
+As in the case of asynchronous notifications, ClubCollect expects a 200 OK as a confirmation of receipt of the notification. If the Partner's endpoint does not return a 200 OK, ClubCollect will not retry to send the notification synchronously, but it will be enqueued to be included in the next round of asynchronous notifications.
