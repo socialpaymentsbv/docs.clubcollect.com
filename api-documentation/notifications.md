@@ -6,7 +6,7 @@ description: Receive updates from ClubCollect
 
 ClubCollect sends out notifications to Partners regarding changes to Invoices and Import Batches. Notifications are sent out on a regular basis every ten minutes.
 
-Notifications are sent as HTTPS callbacks \(webhooks\) to an endpoint on a server managed by the Partner. To receive notifications, you need a server that has:
+Notifications are sent as HTTPS callbacks \(webhooks\) to an endpoint on a server managed by the Partner. To receive notifications, the requirements for the server are:
 
 * An endpoint that can accept a JSON payload in an HTTP POST request.
 * An open TCP port for HTTPS traffic
