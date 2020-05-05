@@ -240,6 +240,14 @@ When supplied, the invoice's locale will be set to this value. From `{ de en fr 
 When supplied, will be accepted and added to the Invoice only if it is a valid IBAN.
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="federation\_membership\_number" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="club\_membership\_number" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="invoice\_lines\[\].invoice\_line\_id" type="string" required=false %}
 Optionally specify a custom identifier to overwrite an otherwise randomly generated identifier. If given, the partner must ensure that the ID is unique. Requests with duplicate IDs will be rejected.
 {% endapi-method-parameter %}
@@ -499,6 +507,89 @@ Must be: `application/json`.
 Partner API Key
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="locale" type="string" required=false %}
+When supplied, the invoice's locale will be set to this value. From `{ de en fr it nl }`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="direct\_debit\_iban" type="string" required=false %}
+When supplied, will be accepted and added to the Invoice only if it is a valid IBAN.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="federation\_membership\_number" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="club\_membership\_number" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.address.country\_code" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.address.city" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.address.zipcode" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.address.address1" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.address.address2" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.address.house\_number" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.address.house\_number\_extension" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.address.locality" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.address.state" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.phone.country\_code" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.phone.phone\_number" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.email.email\_address" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.name.last\_name" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.name.organization" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="external\_invoice\_number" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="reference" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
