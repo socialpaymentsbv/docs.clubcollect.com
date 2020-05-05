@@ -288,7 +288,7 @@ Partner API Key.
 Page number. If it's not given, default to `1`.
 {% endapi-method-parameter %}
 {% api-method-parameter name="page\_size" type="integer" required=false %}
-Number of results per page. If it's not given, default to `30`. Maximum permitted value is `100`.
+Number of results per page. If it's not given, defaults to `30`. Maximum permitted value is `100`.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
