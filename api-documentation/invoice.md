@@ -437,7 +437,6 @@ ID of Import to which the Invoice should belong.
   "invoice_lines": [        
     {
       "invoice_line_id": "...",            
-      "type": "INVOICE-LINE",            
       "amount_cents": 10000,            
       "description": "Membership fee",            
       "date": "..."        
@@ -479,6 +478,10 @@ ID of Import to which the Invoice should belong.
 must be provided. i.e. there must be a way for us to contact the Customer via email, phone or postal mail.
 {% endhint %}
 
+{% hint style="info" %}
+**Note** It's not possible to add or delete invoice lines for an existing invoice. If an invoice is incorrectly created with a wrong amount outstanding (or the invoice becomes invalid for some reason after it's transmitted), the partner can credit it using `/credit_and_retract` endpoint. 
+{% endhint %}
+
 {% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
 {% api-method-summary %}
 Update Invoice
@@ -486,6 +489,11 @@ Update Invoice
 
 {% api-method-description %}
 Update a subset of Invoice attributes.
+
+{% hint style="info" %}
+**Note** The invoice lines can't be updated, only the attributes relative to the recipient of the invoice can be updated.
+{% endhint %}
+
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -735,7 +743,7 @@ Credit and Retract Invoice
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Call this method to credit the total outstanding amount of an invoice and retract it in a single HTTP request. Only the amount without considering additional fees will be credited. It won't be possible to apply more credits to the invoice.
+Call this method to credit the total outstanding amount of an invoice and retract it in a single HTTP request. Any payment decision made for the invoice will be cancelled. Additional fees that might be due will be credited automatically. It won't be possible to apply more credits to the invoice.
 {% endapi-method-description %}
 
 {% api-method-spec %}
