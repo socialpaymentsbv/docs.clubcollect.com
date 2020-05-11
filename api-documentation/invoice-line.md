@@ -158,6 +158,6 @@ Invoice not found.
 * `bancontact`
 * `bacs`
 * `sofort`
+* `paypal`
 * `external`
 {% endhint %}
-
