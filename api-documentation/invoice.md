@@ -479,7 +479,7 @@ must be provided. i.e. there must be a way for us to contact the Customer via em
 {% endhint %}
 
 {% hint style="info" %}
-**Note** It's not possible to add or delete invoice lines for an existing invoice. If an invoice is incorrectly created with a wrong amount outstanding, the partner should credit it before the batch is transmitted, using `/credit_and_retract` endpoint, and then create a new one.
+**Note** It's not possible to add or delete invoice lines for an existing invoice. If an invoice is incorrectly created with a wrong amount outstanding (or the invoice becomes invalid for some reason after it's transmitted), the partner can credit it using `/credit_and_retract` endpoint. 
 {% endhint %}
 
 {% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
