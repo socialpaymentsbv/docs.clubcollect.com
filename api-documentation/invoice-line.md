@@ -161,3 +161,36 @@ Invoice not found.
 * `paypal`
 * `external`
 {% endhint %}
+
+## Line types
+
+For each invoice line we include a `type` attribute and its value can be one of:
+
+
+| Type                        | Description                   |
+|-----------------------------|-------------------------------|
+| **Regular Line**            |                               |
+| `INVOICE-LINE`              | Invoice line                  |
+| **Payment Lines**           |                               |
+| `PAYMENT`                   | Payment                       |
+| `PAYMENT-INSTALLMENT-FEE`   | Payment (Installment fee)     |
+| `PAYMENT-LATE-PAYMENT-FEE`  | Payment (Late payment fee)    |
+| `PAYMENT-PENALTY-FEE`       | Payment (Penalty fee)         |
+| **Fees Lines**              |                               |
+| `INSTALLMENT-FEE`           | Installment fee               |
+| `CHARGEBACK-FEE`            | Chargeback fee                |
+| `LATE-PAYMENT-FEE`          | Late payment fee              |
+| **Chargeback Lines**        |                               |
+| `CHARGEBACK`                | Chargeback                    |
+| `CHARGEBACK-INSTALLMENT-FEE` | Chargeback (Installment fee) |
+| `CHARGEBACK-LATE-PAYMENT-FEE` | Chargeback (Late payment fee) |
+| `CHARGEBACK-PENALTY-FEE`    | Chargeback (Penalty fee)      |
+| **Credit Lines**            |                               |
+| `CREDIT-LINE`               | Credit line                   |
+| `CREDIT-CHARGEBACK-FEE`     | Credit (Chargeback fee)       |
+| `CREDIT-INSTALLMENT-FEE`    | Credit (Installment fee)      |
+| `CREDIT-LATE-PAYMENT-FEE`   | Credit (Late payment fee)     |
+| `CREDIT-LINE-INSTALLMENT-FEE` | Credit line (Installment fee) |
+| `CREDIT-PENALTY-FEE`        | Credit (Penalty fee)          |
+| **Jeugdfonds Lines**        |                               |
+| `JEUGDFONDS`                | Jeugdfonds                    |

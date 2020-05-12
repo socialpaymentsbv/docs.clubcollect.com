@@ -208,6 +208,12 @@ Partner API Key
 **Note** a Partner usually calls the `GET /v2/invoices/:id` method in response to a notification sent by ClubCollect about an update to an Invoice.
 {% endhint %}
 
+
+{% hint style="info" %}
+**Note** To get a list of possible values for invoice lines types see the Invoice Line documentation.
+{% endhint %}
+
+
 {% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/invoices" %}
 {% api-method-summary %}
 Create Invoice
