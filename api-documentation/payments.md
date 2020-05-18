@@ -275,7 +275,7 @@ The format of the JSON payload sent in the notifications is as follows:
 }
 ```
 
-{% api-method method="get" host="https://app.clubcollect.com/api/v2/payments" path="/:payment\_id" %}
+{% api-method method="get" host="https://app.clubcollect.com/api/v2/payments" path="/:id" %}
 {% api-method-summary %}
 Check status of a payment
 {% endapi-method-summary %}
@@ -287,7 +287,7 @@ ClubCollect will inform about any changes in the status using payment notificati
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter name="payment\_id" type="string" required=true %}
+{% api-method-parameter name="id" type="string" required=true %}
 Unique payment identifier returned by ClubCollect in the payment response.
 {% endapi-method-parameter %}
 
@@ -296,7 +296,7 @@ Unique identifier of the company receiver of the payment.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="signature" type="string" required=true %}
-Should include \`payment\_id\` and \`company\_id\`
+Should include \`id\` and \`company\_id\`
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -422,4 +422,3 @@ When one of the parameters is invalid, the JSON payload will inform about the er
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
