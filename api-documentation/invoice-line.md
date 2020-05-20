@@ -41,85 +41,85 @@ Invoice Lines fetched successfully.
 {% endapi-method-response-example-description %}
 
 ```javascript
-{   
-  "import_id": "...",   
-  "invoice_id": "...",    
-  "invoice_lines": [        
+{
+  "import_id": "...",
+  "invoice_id": "...",
+  "invoice_lines": [
     {
-      "invoice_line_id": "...",            
-      "type": "INVOICE-LINE",            
-      "amount_cents": 10000,            
-      "description": "Membership fee",            
-      "date": "..."        
-    },        
+      "invoice_line_id": "...",
+      "type": "INVOICE-LINE",
+      "amount_cents": 10000,
+      "description": "Membership fee",
+      "date": "..."
+    },
     {
-      "invoice_line_id": "...",           
-      "type": "CREDIT-LINE",            
-      "amount_cents": -1000,           
-      "description": "Deduction",            
-      "date": "..."        
-    },        
-    {          
-      "invoice_line_id": "...",            
-      "type": "PAYMENT-LINE",           
-      "amount_cents": 123,            
-      "description": null,            
+      "invoice_line_id": "...",
+      "type": "CREDIT-LINE",
+      "amount_cents": -1000,
+      "description": "Deduction",
+      "date": "..."
+    },
+    {
+      "invoice_line_id": "...",
+      "type": "PAYMENT-LINE",
+      "amount_cents": -123,
+      "description": null,
       "date": "...",
-      "payment_method": "..."        
-    },        
-    {          
-      "invoice_line_id": "...",            
-      "type": "CHARGEBACK-LINE",            
-      "amount_cents": 123,           
-      "description": null,            
-      "date": "..."        
-    },        
-    {          
-      "invoice_line_id": "...",           
-      "type": "CHARGEBACK-FEE-LINE",            
-      "amount_cents": 123,           
-      "description": null,            
-      "date": "..."        
-    },        
-    {          
-      "invoice_line_id": "...",            
-      "type": "CHARGEBACK-FEE-PAYMENT-LINE",            
-      "amount_cents": 123,            
-      "description": null,            
-      "date": "..."        
-    },        
-    {          
-      "invoice_line_id": "...",            
-      "type": "LATE-PAYMENT-FEE-LINE",            
-      "amount_cents": 123,            
-      "description": null,            
-      "date": "..."        
-    },        
-    {          
-      "invoice_line_id": "...",            
-      "type": "LATE-PAYMENT-FEE-PAYMENT-LINE",            
-      "amount_cents": 123,            
-      "description": null,            
+      "payment_method": "..."
+    },
+    {
+      "invoice_line_id": "...",
+      "type": "CHARGEBACK-LINE",
+      "amount_cents": 123,
+      "description": null,
+      "date": "..."
+    },
+    {
+      "invoice_line_id": "...",
+      "type": "CHARGEBACK-FEE-LINE",
+      "amount_cents": 123,
+      "description": null,
+      "date": "..."
+    },
+    {
+      "invoice_line_id": "...",
+      "type": "CHARGEBACK-FEE-PAYMENT-LINE",
+      "amount_cents": 123,
+      "description": null,
+      "date": "..."
+    },
+    {
+      "invoice_line_id": "...",
+      "type": "LATE-PAYMENT-FEE-LINE",
+      "amount_cents": 123,
+      "description": null,
+      "date": "..."
+    },
+    {
+      "invoice_line_id": "...",
+      "type": "LATE-PAYMENT-FEE-PAYMENT-LINE",
+      "amount_cents": 123,
+      "description": null,
       "date": "...",
-      "payment_method": "..."        
+      "payment_method": "..."
 
-    },        
-    {          
-      "invoice_line_id": "...",            
-      "type": "INSTALLMENT-FEE-LINE",            
-      "amount_cents": 123,            
-      "description": null,            
-      "date": "..."        
-      },        
-      {          
-        "invoice_line_id": "...",            
-        "type": "INSTALLMENT-FEE-PAYMENT-LINE",           
-        "amount_cents": 123,            
-        "description": null,            
-        "date": "...",        
-        "payment_method": "..."        
-        }    
-      ],      
+    },
+    {
+      "invoice_line_id": "...",
+      "type": "INSTALLMENT-FEE-LINE",
+      "amount_cents": 123,
+      "description": null,
+      "date": "..."
+      },
+      {
+        "invoice_line_id": "...",
+        "type": "INSTALLMENT-FEE-PAYMENT-LINE",
+        "amount_cents": -123,
+        "description": null,
+        "date": "...",
+        "payment_method": "..."
+        }
+      ],
     "amount_total_cents": "..."
   }
 ```
@@ -164,33 +164,73 @@ Invoice not found.
 
 ## Line types
 
-For each invoice line we include a `type` attribute and its value can be one of:
+The invoice lines can be of 2 basic types: increasing the invoice balance (regular lines, fees, chargebacks) and will have a positive amount attribute or decreasing the invoice balance (payments, credits) and will have a negative amount attribute. Furthermore lines can be categorized by their type (e.g.: Installment fees, Late payment fees).
+
+The API will represent the information above in the `type` attribute and its value can be one of:
+
+### Regular Lines
+
+This line type is used for lines added to the invoice at creation time or when increasing the invoice amount
+from the ClubCollect web interface.
+
+| Type | Description |
+|-|-|
+| `INVOICE-LINE` | Regular Invoice line |
+
+### Fees Lines
+
+At certain points of the life cycle of an invoice fees can be added to the invoice (e.g. Member initiating a payment
+in installments).
 
 
-| Type                        | Description                   |
-|-----------------------------|-------------------------------|
-| **Regular Line**            |                               |
-| `INVOICE-LINE`              | Invoice line                  |
-| **Payment Lines**           |                               |
-| `PAYMENT`                   | Payment                       |
-| `PAYMENT-INSTALLMENT-FEE`   | Payment (Installment fee)     |
-| `PAYMENT-LATE-PAYMENT-FEE`  | Payment (Late payment fee)    |
-| `PAYMENT-PENALTY-FEE`       | Payment (Penalty fee)         |
-| **Fees Lines**              |                               |
-| `INSTALLMENT-FEE`           | Installment fee               |
-| `CHARGEBACK-FEE`            | Chargeback fee                |
-| `LATE-PAYMENT-FEE`          | Late payment fee              |
-| **Chargeback Lines**        |                               |
-| `CHARGEBACK`                | Chargeback                    |
-| `CHARGEBACK-INSTALLMENT-FEE` | Chargeback (Installment fee) |
-| `CHARGEBACK-LATE-PAYMENT-FEE` | Chargeback (Late payment fee) |
-| `CHARGEBACK-PENALTY-FEE`    | Chargeback (Penalty fee)      |
-| **Credit Lines**            |                               |
-| `CREDIT-LINE`               | Credit line                   |
-| `CREDIT-CHARGEBACK-FEE`     | Credit (Chargeback fee)       |
-| `CREDIT-INSTALLMENT-FEE`    | Credit (Installment fee)      |
-| `CREDIT-LATE-PAYMENT-FEE`   | Credit (Late payment fee)     |
-| `CREDIT-LINE-INSTALLMENT-FEE` | Credit line (Installment fee) |
-| `CREDIT-PENALTY-FEE`        | Credit (Penalty fee)          |
-| **Jeugdfonds Lines**        |                               |
-| `JEUGDFONDS`                | Jeugdfonds                    |
+| Type | Description |
+|-|-|
+| `INSTALLMENT-FEE` | Fee members must pay when paying for an invoice in installments |
+| `CHARGEBACK-FEE` | When a payment is charged back a fee will be added to the invoice |
+| `LATE-PAYMENT-FEE` | Late payment fee added when reminders are sent |
+
+### Payment Lines
+
+When payments are made (either directly by member or external payments added from the Club Collect web interface)
+payment invoice lines will are added to the invoice.
+
+
+| Type | Description |
+|-|-|
+| `PAYMENT` | Payments towards the regular invoice lines |
+| `PAYMENT-INSTALLMENT-FEE` | Payments for installment fees |
+| `PAYMENT-CHARGEBACK-FEE` | Payments for chargeback fees |
+| `PAYMENT-LATE-PAYMENT-FEE` | Payments for late payment fees |
+| `PAYMENT-PENALTY-FEE` | Payment for penalty fees (Legacy) |
+
+
+## Chargeback Lines
+
+When a previously successful payment is charged back (usually happens for Sepa Direct Direct or Card payments)
+Club Collect will generate chargeback lines for the registered payment lines.
+
+| Type | Description |
+|-|-|
+| `CHARGEBACK` | Chargeback line for regular invoice line |
+| `CHARGEBACK-INSTALLMENT-FEE` | Chargeback for installment fees |
+| `CHARGEBACK-LATE-PAYMENT-FEE` | Chargeback for late payment fee |
+| `CHARGEBACK-CHARGEBACK-FEE`    | Chargeback for paid chargeback fees |
+| `CHARGEBACK-PENALTY-FEE`    | Chargeback for penalty fees |
+
+## Credit Lines
+
+When credits are added to an invocie or fees are credited from the Club Collect Web Interface we will add
+a new invoice line to the invoice.
+
+| Type | Description |
+|-|-|
+| `CREDIT-LINE` | General credit line |
+| `CREDIT-CHARGEBACK-FEE` | Credits for a chargeback fee |
+| `CREDIT-INSTALLMENT-FEE` | Credit for an installment fee |
+| `CREDIT-LATE-PAYMENT-FEE` | Credit for a late payment fee |
+| `CREDIT-LINE-INSTALLMENT-FEE` | Credit line for an installment fee* |
+| `CREDIT-PENALTY-FEE` | Credit for a Penalty fee |
+
+
+Note: penalty lines are a legacy types. You'll see this in the API for older invoices but no new invoice lines
+with have this type.
