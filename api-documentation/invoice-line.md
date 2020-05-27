@@ -166,7 +166,7 @@ Invoice not found.
 
 The invoice lines can be of 2 basic types: increasing the invoice balance (regular lines, fees, chargebacks) and will have a positive amount attribute or decreasing the invoice balance (payments, credits) and will have a negative amount attribute. Furthermore lines can be categorized by their type (e.g.: Installment fees, Late payment fees).
 
-The type of an invoice line can be determined by the `type` attributes (always present) and the optional `subtype` attributes.
+The type of an invoice line is determined by the `type` attributes (always present) and the optional `subtype` attributes. Below is a list of possible values.
 
 
 ### Regular Lines
