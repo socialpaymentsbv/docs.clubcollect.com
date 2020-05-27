@@ -231,7 +231,7 @@ a new invoice line to the invoice.
 | Type | Subtype | Description |
 |-|-|-|
 | `CREDIT-LINE` | | General credit line |
-| `CREDIT-LINE` | `donation` | Credit for donation line - happens when member removes the donation |
+| `CREDIT-LINE` | `donation` | Credit for donation line |
 | `CREDIT-LINE` | `surcharge` | Credits for the payment fee |
 | `CREDIT-CHARGEBACK-FEE` | | Credits for a chargeback fee |
 | `CREDIT-INSTALLMENT-FEE` | | Credit for an installment fee |
