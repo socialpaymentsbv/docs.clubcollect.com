@@ -164,9 +164,9 @@ Invoice not found.
 
 ## Line types
 
-The invoice lines can be of 2 basic types: increasing the invoice balance (regular lines, fees, chargebacks) and will have a positive amount attribute or decreasing the invoice balance (payments, credits) and will have a negative amount attribute. Furthermore lines can be categorized by their type (e.g.: Installment fees, Late payment fees).
+The invoice lines can either increase the invoice outstanding (positive amount), e.g. regular lines, fees, chargebacks; or decrease the outstanding (negative amount), e.g. payments, credits. Furthermore lines can be categorised by their type.
 
-The type of an invoice line is determined by the `type` attributes (always present) and the optional `subtype` attributes. Below is a list of possible values.
+The type of an invoice line is determined by the `type` attributes (always present) and the optional `subtype` attributes. Below you can find a description of the possible values for invoice lines types.
 
 
 ### Regular Lines
@@ -176,9 +176,9 @@ from the ClubCollect web interface or when a member adds a donation to the invoi
 
 | Type | Subtype | Description |
 |-|-|-|
-| `INVOICE-LINE` | | Regular Invoice line |
-| `INVOICE-LINE` | `donation` | Donation Invoice line |
-| `INVOICE-LINE` | `surcharge` | Payment process fee Invoice line |
+| `INVOICE-LINE` | | Amounts added by the partner when an invoice is created will be of this type |
+| `INVOICE-LINE` | `donation` | Donation added to an invoice |
+| `INVOICE-LINE` | `surcharge` | Payment fee charged to the receiver of the invoice |
 
 ### Fees Lines
 
@@ -188,19 +188,19 @@ in installments).
 
 | Type | Subtype | Description |
 |-|-|-|
-| `INSTALLMENT-FEE` | | Fee members must pay when paying for an invoice in installments |
-| `CHARGEBACK-FEE` | | When a payment is charged back a fee will be added to the invoice |
-| `LATE-PAYMENT-FEE` | | Late payment fee added when reminders are sent |
+| `INSTALLMENT-FEE` | | These fees are added to the invoice when it is paid in installments |
+| `CHARGEBACK-FEE` | | When a payment is charged back a fee might be added to the invoice |
+| `LATE-PAYMENT-FEE` | | Late payment fees are penalties that might be added when the invoice is overdue |
 
 ### Payment Lines
 
-When payments are made (either directly by member or external payments added from the Club Collect web interface)
+Payment lines are added to register new payments happening for an invoice.
 payment invoice lines will are added to the invoice.
 
 
 | Type | Subtype | Description |
 |-|-|-|
-| `PAYMENT` | | Payments towards the regular invoice lines |
+| `PAYMENT` | | Payment for the amount invoiced by the partner |
 | `PAYMENT` | `donation` | Payments towards donation invoice lines |
 | `JEUGDFONDS` | `jsf` | Jeugdfonds payment |
 | `PAYMENT-INSTALLMENT-FEE` | | Payments for installment fees |
@@ -211,8 +211,7 @@ payment invoice lines will are added to the invoice.
 
 ## Chargeback Lines
 
-When a previously successful payment is charged back (usually happens for Sepa Direct Direct or Card payments)
-Club Collect will generate chargeback lines for the registered payment lines.
+When a successful payment (usually Sepa Direct Debit) is charged back, chargeback lines are added to the invoice to cancel the amount of the payment that has been charged back.
 
 | Type | Subtype | Description |
 |-|-|-|
@@ -225,12 +224,12 @@ Club Collect will generate chargeback lines for the registered payment lines.
 
 ## Credit Lines
 
-When credits are added to an invocie or fees are credited from the Club Collect Web Interface we will add
+Credit lines are added to the invoice to discount an amount from the amount outstanding. 
 a new invoice line to the invoice.
 
 | Type | Subtype | Description |
 |-|-|-|
-| `CREDIT-LINE` | | General credit line |
+| `CREDIT-LINE` | | Discount applied to the amount invoiced by the partner |
 | `CREDIT-LINE` | `donation` | Credit for donation lines |
 | `CREDIT-LINE` | `surcharge` | Credits for the payment fee |
 | `CREDIT-CHARGEBACK-FEE` | | Credits for a chargeback fee |
@@ -239,5 +238,5 @@ a new invoice line to the invoice.
 | `CREDIT-PENALTY-FEE` | | Credit for a Penalty fee |
 
 
-Note: penalty lines are a legacy types. You'll see this in the API for older invoices but no new invoice lines
+Note: penalty lines are a legacy type. You might see some of them for older invoices but no new invoice lines of this type are created.
 with have this type.
