@@ -215,7 +215,7 @@ When a successful payment (usually Sepa Direct Debit) is charged back, chargebac
 
 | Type | Subtype | Description |
 |-|-|-|
-| `CHARGEBACK` | | Chargeback line for regular invoice lines |
+| `CHARGEBACK` | | Chargeback for the amount invoiced by the partner |
 | `CHARGEBACK` | `donation` | Chargeback line for donation invoice lines |
 | `CHARGEBACK-INSTALLMENT-FEE` | | Chargeback for installment fees |
 | `CHARGEBACK-LATE-PAYMENT-FEE` | | Chargeback for late payment fee |
