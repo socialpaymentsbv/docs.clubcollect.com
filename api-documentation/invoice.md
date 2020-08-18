@@ -50,6 +50,7 @@ Partner API Key
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_membership_number": "...",
   "customer": {
     "name": {
       "prefix": "Mr",
@@ -254,6 +255,10 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="external\_membership\_number" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="invoice\_lines\[\].invoice\_line\_id" type="string" required=false %}
 Optionally specify a custom identifier to overwrite an otherwise randomly generated identifier. If given, the partner must ensure that the ID is unique. Requests with duplicate IDs will be rejected.
 {% endapi-method-parameter %}
@@ -352,6 +357,7 @@ ID of Import to which the Invoice should belong.
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_membership_number": "...",
   "customer": {
     "name": {
       "prefix": "Mr",
@@ -413,6 +419,7 @@ ID of Import to which the Invoice should belong.
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_membership_number": "...",
   "locale": "en",
   "customer": {
     "name": {
@@ -539,6 +546,10 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="external\_membership\_number" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="customer.address.country\_code" type="string" required=false %}
 
 {% endapi-method-parameter %}
@@ -621,6 +632,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_membership_number": "...",
   "customer": {
     "name": {
       "prefix": "Mr",
@@ -705,6 +717,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_membership_number": "...",
   "customer": {
     "name": {
       "prefix": "Mr",
@@ -807,6 +820,7 @@ Partner API Key.
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_membership_number": "...",
   "customer": {
     "name": {
       "prefix": "Mr",
