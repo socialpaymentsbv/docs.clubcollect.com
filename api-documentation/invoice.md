@@ -50,6 +50,7 @@ Partner API Key
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_member_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
@@ -255,6 +256,10 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="external\_member\_id" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="external\_membership\_number" type="string" required=false %}
 
 {% endapi-method-parameter %}
@@ -357,6 +362,7 @@ ID of Import to which the Invoice should belong.
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_member_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
@@ -419,6 +425,7 @@ ID of Import to which the Invoice should belong.
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_member_id": "...",
   "external_membership_number": "...",
   "locale": "en",
   "customer": {
@@ -492,7 +499,7 @@ must be provided. i.e. there must be a way for us to contact the Customer via em
 {% endhint %}
 
 {% hint style="info" %}
-**Note** It's not possible to add or delete invoice lines for an existing invoice. If an invoice is incorrectly created with a wrong amount outstanding (or the invoice becomes invalid for some reason after it's transmitted), the partner can credit it using `/credit_and_retract` endpoint. 
+**Note** It's not possible to add or delete invoice lines for an existing invoice. If an invoice is incorrectly created with a wrong amount outstanding (or the invoice becomes invalid for some reason after it's transmitted), the partner can credit it using `/credit_and_retract` endpoint.
 {% endhint %}
 
 {% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
@@ -543,6 +550,10 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="club\_membership\_number" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="external\_member\_id" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
@@ -632,6 +643,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_member_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
@@ -717,6 +729,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_member_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
@@ -820,6 +833,7 @@ Partner API Key.
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
+  "external_member_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
