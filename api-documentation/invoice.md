@@ -50,7 +50,7 @@ Partner API Key
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
-  "external_member_id": "...",
+  "member_external_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
@@ -256,7 +256,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="external\_member\_id" type="string" required=false %}
+{% api-method-parameter name="member\_external\_id" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
@@ -362,7 +362,7 @@ ID of Import to which the Invoice should belong.
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
-  "external_member_id": "...",
+  "member_external_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
@@ -425,7 +425,7 @@ ID of Import to which the Invoice should belong.
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
-  "external_member_id": "...",
+  "member_external_id": "...",
   "external_membership_number": "...",
   "locale": "en",
   "customer": {
@@ -553,7 +553,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="external\_member\_id" type="string" required=false %}
+{% api-method-parameter name="member\_external\_id" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
@@ -643,7 +643,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
-  "external_member_id": "...",
+  "member_external_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
@@ -729,7 +729,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
-  "external_member_id": "...",
+  "member_external_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
@@ -833,7 +833,7 @@ Partner API Key.
   "direct_debit_iban": "...",
   "federation_membership_number": "...",
   "club_membership_number": "...",
-  "external_member_id": "...",
+  "member_external_id": "...",
   "external_membership_number": "...",
   "customer": {
     "name": {
