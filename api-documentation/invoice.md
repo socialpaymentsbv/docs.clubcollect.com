@@ -22,14 +22,18 @@ Invoice ID
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Content-Type" type="string" required=false %}
 Must be `application/json`.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -228,14 +232,18 @@ Create an Invoice with one or more Invoice Lines.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Content-Type" type="string" required=true %}
 Must be: `application/json`.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
@@ -525,14 +533,18 @@ Invoice ID
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Content-Type" type="string" required=true %}
 Must be: `application/json`.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
@@ -787,14 +799,18 @@ ID of the Invoice to be retracted.
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Content-Type" type="string" required=true %}
 Must be `application/json`.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
@@ -947,9 +963,15 @@ Invoice ID
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

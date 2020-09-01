@@ -22,14 +22,18 @@ ID of Invoice for which Line Items wish to be retrieved.
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Content-Type" type="string" required=true %}
 Must be: `application/json`.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
