@@ -210,9 +210,11 @@ Partner API Key
 **Note** a Partner usually calls the `GET /v2/invoices/:id` method in response to a notification sent by ClubCollect about an update to an Invoice.
 {% endhint %}
 
+
 {% hint style="info" %}
 **Note** To get a list of possible values for invoice lines types see the Invoice Line documentation.
 {% endhint %}
+
 
 {% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/invoices" %}
 {% api-method-summary %}
@@ -497,7 +499,7 @@ must be provided. i.e. there must be a way for us to contact the Customer via em
 {% endhint %}
 
 {% hint style="info" %}
-**Note** It's not possible to add or delete invoice lines for an existing invoice. If an invoice is incorrectly created with a wrong amount outstanding \(or the invoice becomes invalid for some reason after it's transmitted\), the partner can credit it using `/credit_and_retract` endpoint.
+**Note** It's not possible to add or delete invoice lines for an existing invoice. If an invoice is incorrectly created with a wrong amount outstanding (or the invoice becomes invalid for some reason after it's transmitted), the partner can credit it using `/credit_and_retract` endpoint.
 {% endhint %}
 
 {% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
@@ -507,6 +509,11 @@ Update Invoice
 
 {% api-method-description %}
 Update a subset of Invoice attributes.
+
+{% hint style="info" %}
+**Note** The invoice lines can't be updated, only the attributes relative to the recipient of the invoice can be updated.
+{% endhint %}
+
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -617,6 +624,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 {% api-method-parameter name="reference" type="string" required=false %}
 
 {% endapi-method-parameter %}
+
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -983,4 +991,3 @@ Invoice successfully deleted.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-

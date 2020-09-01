@@ -60,4 +60,3 @@ Real-time are sent to the same endpoint as the asynchronous notifications. The f
 ```
 
 As in the case of asynchronous notifications, ClubCollect expects a 200 OK as a confirmation of receipt of the notification. If the Partner's endpoint does not return a 200 OK, ClubCollect will not retry to send the notification synchronously, but it will be enqueued to be included in the next round of asynchronous notifications.
-
