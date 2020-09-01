@@ -17,7 +17,7 @@ This endpoint allows to start a new payment and redirects the user to the paymen
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="payment\_method" type="string" required=true %}
-Payment Method \(allowed: ideal, bancontact, credit_card, paypal, sofort\)
+Payment Method \(allowed: ideal, bancontact, credit\_card, paypal, sofort\)
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -422,3 +422,4 @@ When one of the parameters is invalid, the JSON payload will inform about the er
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+

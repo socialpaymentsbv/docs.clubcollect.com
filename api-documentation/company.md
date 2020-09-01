@@ -25,6 +25,12 @@ Company ID, supplied by ClubCollect.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;partner\_api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
 {% api-method-parameter name="api\_key" type="string" required=true %}
 Partner API Key.

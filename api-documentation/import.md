@@ -94,12 +94,9 @@ Partner API Key.
 Company to which the Import should belong.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="expected_invoices_count" type="string" required=false %}
-Number of invoices expected to be added to this import. If provided the Import
-cannot be transmitted from the ClubCollect User Interface until all invoices
-are created.
+{% api-method-parameter name="expected\_invoices\_count" type="string" required=false %}
+Number of invoices expected to be added to this import. If provided the Import cannot be transmitted from the ClubCollect User Interface until all invoices are created.
 {% endapi-method-parameter %}
-
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -232,7 +229,6 @@ Update an import.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="string" required=true %}
 Import ID
@@ -246,12 +242,9 @@ Partner API Key.
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="expected_invoices_count" type="string" required=false %}
-Number of invoices expected to be added to this import. If provided the Import
-cannot be transmitted from the ClubCollect User Interface until all invoices
-are created.
+{% api-method-parameter name="expected\_invoices\_count" type="string" required=false %}
+Number of invoices expected to be added to this import. If provided the Import cannot be transmitted from the ClubCollect User Interface until all invoices are created.
 {% endapi-method-parameter %}
-
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -277,6 +270,18 @@ are created.
 ```
 {% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=302 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "error": "invalid_import_id"
+}
+```
+{% endapi-method-response-example %}
+
 {% api-method-response-example httpCode=404 %}
 {% api-method-response-example-description %}
 
@@ -285,17 +290,6 @@ are created.
 ```javascript
 {
   "error": "invalid_company_id"
-}
-```
-{% endapi-method-response-example %}
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "error": "invalid_import_id"
 }
 ```
 {% endapi-method-response-example %}
@@ -393,15 +387,15 @@ Returns the list of import batches created by a company, paginated and sorted in
 ID of the company for which batches are requested.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="api_key" type="string" required=true %}
-The token that is used to authenticate requests against the ClubCollect API. 
+{% api-method-parameter name="api\_key" type="string" required=true %}
+The token that is used to authenticate requests against the ClubCollect API.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="page_number" type="string" required=false %}
+{% api-method-parameter name="page\_number" type="string" required=false %}
 Page number requested. If not specified, default to `1`.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="page_size" type="string" required=false %}
+{% api-method-parameter name="page\_size" type="string" required=false %}
 Number of results per page. If not specified, default to `30`.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -451,3 +445,4 @@ Company ID does not exist.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
