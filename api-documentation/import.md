@@ -21,9 +21,15 @@ Import ID, supplied by ClubCollect.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -79,9 +85,15 @@ Create a new, empty Import.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
@@ -161,9 +173,15 @@ Import ID
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -239,9 +257,15 @@ Import ID
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
@@ -332,9 +356,15 @@ Import ID
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -393,10 +423,6 @@ Returns the list of import batches created by a company, paginated and sorted in
 ID of the company for which batches are requested.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="api_key" type="string" required=true %}
-The token that is used to authenticate requests against the ClubCollect API. 
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="page_number" type="string" required=false %}
 Page number requested. If not specified, default to `1`.
 {% endapi-method-parameter %}
@@ -405,6 +431,18 @@ Page number requested. If not specified, default to `1`.
 Number of results per page. If not specified, default to `30`.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}

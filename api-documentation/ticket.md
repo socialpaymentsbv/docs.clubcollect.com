@@ -18,14 +18,18 @@ ID of Invoice for which Tickets wish to be fetched.
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Content-Type" type="string" required=true %}
 Must be `application/json`.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -87,14 +91,17 @@ ID for the Invoice to which the Ticket should be attached.
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
 {% api-method-parameter name="Content-Type" type="string" required=true %}
 Must be `application/json`.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
@@ -166,14 +173,18 @@ ID of the Invoice for which Tickets should be archived.
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Content-Type" type="string" required=true %}
 Must be `application/json`.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -222,14 +233,18 @@ ID of Invoice for which Tickets should be assigned to Support.
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Content-Type" type="string" required=true %}
 Must be `application/json`.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -280,9 +295,16 @@ One of: `{ unanswered answered archived }`
 ID of Company for which Tickets should be fetched.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% api-method-parameter name="page\_number" type="integer" required=false %}
 Page number. If it's not given, default to `1`.

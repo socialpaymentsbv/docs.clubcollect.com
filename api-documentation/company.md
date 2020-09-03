@@ -25,9 +25,15 @@ Company ID, supplied by ClubCollect.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -82,9 +88,15 @@ Create a new Company.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
@@ -187,9 +199,15 @@ Company ID, supplied by ClubCollect.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+ApiKey &lt;api\_key&gt;
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
-Partner API Key.
+{% api-method-parameter name="api\_key" type="string" required=false %}
+Partner API Key (Deprecated)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

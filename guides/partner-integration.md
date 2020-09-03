@@ -14,6 +14,16 @@ In dialogue with ClubCollect a Partner Account will be set up and a **token** is
 This is your unique token identifying requests. **It must be protected at all times.** Should you believe your token has been compromised please contact ClubCollect immediately via `support@clubcollect.com`.
 {% endhint %}
 
+{% hint style="warning" %}
+Authentication passing api_key in the request params is deprecated and it's scheduled to be discontinued.
+
+Partners are encourage to integrate the new authentication scheme, using HTTP authorization header.
+
+```
+Authorization: ApiKey <api_key>
+```
+{% endhint %}
+
 ### Data Hierarchy
 
 The following list gives an overview of the data hierarchy:
