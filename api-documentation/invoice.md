@@ -285,19 +285,19 @@ Must be equal to the sum of the amounts of the Invoice Lines. May be zero or neg
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.address.country\_code" type="string" required=true %}
-
+May be empty if \`email\_address\` or \`phone\_number\` is provided
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.address.city" type="string" required=true %}
-May be empty if \`email\_address\` or \`phone\_number\` is provided\`
+May be empty if \`email\_address\` or \`phone\_number\` is provided
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.address.zipcode" type="string" required=true %}
-May be empty if \`email\_address\` or \`phone\_number\` is provided\`
+May be empty if \`email\_address\` or \`phone\_number\` is provided
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.address.address1" type="string" required=true %}
-May be empty if \`email\_address\` or \`phone\_number\` is provided\`
+May be empty if \`email\_address\` or \`phone\_number\` is provided
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.address.address2" type="string" required=false %}
@@ -321,15 +321,15 @@ May be empty if \`email\_address\` or \`phone\_number\` is provided\`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.phone.country\_code" type="string" required=true %}
-May be empty if \`email\_address\` or a postal address is provided\`
+May be empty if \`email\_address\` or a postal address is provided
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.phone.phone\_number" type="string" required=true %}
-May be empty if \`email\_address\` or a postal address is provided.
+May be empty if \`email\_address\` or a postal address is provided
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.email.email\_address" type="string" required=true %}
-May be empty if \`phone\_number\` or a postal address is provided.
+May be empty if \`phone\_number\` or a postal address is provided
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.name.last\_name" type="string" required=true %}
