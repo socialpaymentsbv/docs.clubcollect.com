@@ -50,7 +50,7 @@ Import successfully retrieved.
   "prepaid_amount_currency": "EUR|GBP|CHF",
   "settled_amount_cents": 456,
   "settled_amount_currency": "EUR|GBP|CHF",
-  "expected_invoices_count": 789,
+  "expected_invoices_count": 3,
   "invoice_ids": [
     "47417520982b90764d0067d529691934e6ec3a42",
     "c0009400834121ded4cdd5a623da52f12c737262",
@@ -132,7 +132,7 @@ are created.
   "prepaid_amount_currency": "EUR",
   "settled_amount_cents": 0,
   "settled_amount_currency": "EUR",
-  "expected_invoices_count": 14,
+  "expected_invoices_count": 0,
   "invoice_ids": [
   ]
 }
@@ -204,7 +204,7 @@ Batch successfully transmitted.
   "prepaid_amount_currency": "EUR",
   "settled_amount_cents": 0,
   "settled_amount_currency": "EUR",
-  "expected_invoices_count": 14,
+  "expected_invoices_count": 0,
   "invoice_ids": [
   ]
 }
@@ -298,7 +298,7 @@ are created.
   "prepaid_amount_currency": "EUR",
   "settled_amount_cents": 0,
   "settled_amount_currency": "EUR",
-  "expected_invoices_count": 14,
+  "expected_invoices_count": 0,
   "invoice_ids": [
   ]
 }
