@@ -62,10 +62,6 @@ Unique invoice number provided by the partner.
 Language that will be used in the payment process. If not given, the company default locale will be used.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="first\_name" type="string" required=false %}
-First name of the payee.
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="prefix" type="string" required=false %}
 Prefix of the name of the payee.
 {% endapi-method-parameter %}
@@ -80,6 +76,10 @@ Payee country, as defined by ISO 3166-1 alpha-2 standard.
 
 {% api-method-parameter name="address1" type="string" required=false %}
 Payee street name
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="address2" type="string" required=false %}
+Payee additional street name
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="house\_number" type="string" required=false %}
