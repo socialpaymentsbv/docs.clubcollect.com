@@ -181,8 +181,9 @@ from the ClubCollect web interface or when a member adds a donation to the invoi
 | Type | Subtype | Description |
 |-|-|-|
 | `INVOICE-LINE` | | Amounts added by the partner when an invoice is created will be of this type |
-| `INVOICE-LINE` | `donation` | Donation added to an invoice |
-| `INVOICE-LINE` | `surcharge` | Payment fee charged to the receiver of the invoice |
+| `INVOICE-LINE` | `DONATION` | Donation added to an invoice |
+| `INVOICE-LINE` | `SURCHARGE` | Payment fee charged to the receiver of the invoice |
+| `INVOICE-LINE` | `ADMINISTRATIVE_FEE` | Administrative fee charged to the receiver of the invoice |
 
 ### Fees Lines
 
@@ -220,7 +221,8 @@ When a successful payment (usually Sepa Direct Debit) is charged back, chargebac
 | Type | Subtype | Description |
 |-|-|-|
 | `CHARGEBACK` | | Chargeback for the amount invoiced by the partner |
-| `CHARGEBACK` | `donation` | Chargeback line for donation invoice lines |
+| `CHARGEBACK` | `DONATION` | Chargeback line for a donation invoice lines |
+| `CHARGEBACK` | `ADMINISTRATIVE_FEE` | Chargeback line for an administrative fee invoice lines |
 | `CHARGEBACK-INSTALLMENT-FEE` | | Chargeback for installment fees |
 | `CHARGEBACK-LATE-PAYMENT-FEE` | | Chargeback for late payment fee |
 | `CHARGEBACK-CHARGEBACK-FEE` | | Chargeback for paid chargeback fees |
@@ -228,14 +230,15 @@ When a successful payment (usually Sepa Direct Debit) is charged back, chargebac
 
 ## Credit Lines
 
-Credit lines are added to the invoice to discount an amount from the amount outstanding. 
+Credit lines are added to the invoice to discount an amount from the amount outstanding.
 a new invoice line to the invoice.
 
 | Type | Subtype | Description |
 |-|-|-|
 | `CREDIT-LINE` | | Discount applied to the amount invoiced by the partner |
-| `CREDIT-LINE` | `donation` | Credit for donation lines |
-| `CREDIT-LINE` | `surcharge` | Credits for the payment fee |
+| `CREDIT-LINE` | `DONATION` | Credit for donation lines |
+| `CREDIT-LINE` | `SURCHARGE` | Credits for the payment fee |
+| `CREDIT-LINE` | `ADMINISTRATIVE_FEE` | Credits for the administrative fee |
 | `CREDIT-CHARGEBACK-FEE` | | Credits for a chargeback fee |
 | `CREDIT-INSTALLMENT-FEE` | | Credit for an installment fee |
 | `CREDIT-LATE-PAYMENT-FEE` | | Credit for a late payment fee |
