@@ -43,7 +43,7 @@ Last name of the payee. Required unless invoice\_id is provided.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="amount\_cents" type="integer" required=true %}
-Amount in cents that is going to be paid. Required unless invoice\_id is provided.
+Amount in cents that is going to be paid. Required unless invoice\_id is provided. Can't be smaller than `100`.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="payment\_reference" type="string" required=false %}
