@@ -99,7 +99,7 @@ Payee email address.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="phone\_number" type="string" required=false %}
-Payee phone number.
+Payee phone number. It is expected to provide the full phone number including international prefix (e.g. +31)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
