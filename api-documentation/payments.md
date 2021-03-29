@@ -47,7 +47,7 @@ Amount in cents that is going to be paid. Required unless invoice\_id is provide
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="payment\_id" type="string" required=false %}
-Payment identifier, will be used further to reference this Payment. If not provided ClubCollect will generate an identifier (a hexadecimal string of at least 40 chars). This values must be unique so we advise you to provide an UUID like value. If ClubCollect determines that the value is not unique an error will be returned.
+Payment identifier, will be used further to reference this Payment. If not provided ClubCollect will generate an identifier (a hexadecimal string of at least 40 chars). This values must be unique and have between 10 and 50 chars so we advise you to provide an UUID like value. If ClubCollect determines that the value is not unique an error will be returned.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="payment\_reference" type="string" required=false %}
