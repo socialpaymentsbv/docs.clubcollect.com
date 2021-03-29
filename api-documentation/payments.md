@@ -46,6 +46,10 @@ Last name of the payee. Required unless invoice\_id is provided.
 Amount in cents that is going to be paid. Required unless invoice\_id is provided. Can't be smaller than `100`.
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="payment\_id" type="string" required=false %}
+Payment identifier, will be used further to reference this Payment. If not provided ClubCollect will generate an identifier (a hexadecimal string of at least 40 chars). This values must be unique so we advise you to provide an UUID like value. If ClubCollect determines that the value is not unique an error will be returned.
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="payment\_reference" type="string" required=false %}
 Reference of the payment, will be used as description of the invoice line.
 {% endapi-method-parameter %}
@@ -281,7 +285,7 @@ Check status of a payment
 {% endapi-method-summary %}
 
 {% api-method-description %}
-ClubCollect will inform about any changes in the status using payment notifications. This endpoint can be used as a "backup" by the partner to check the current status of a payment in case any notification is dismissed.
+ClubCollect will inform about any changes in the status using payment notifications. This endpoint can be used as a "backup" by the partner to check the current status of a payment in case any notification is dismissed. If at creation time you have provided a custom payment_id then you should use that identifier in this request.
 {% endapi-method-description %}
 
 {% api-method-spec %}
