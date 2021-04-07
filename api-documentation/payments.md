@@ -103,7 +103,7 @@ Payee email address.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="phone\_number" type="string" required=false %}
-Payee phone number. It is expected to provide the full phone number including international prefix (e.g. +31)
+Payee phone number. It is expected that partner provides the phone number in E.164 format, i.e. including international prefix (e.g. +31)
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
