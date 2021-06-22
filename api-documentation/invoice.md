@@ -332,12 +332,19 @@ May be empty if \`email\_address\` or a postal address is provided
 May be empty if \`phone\_number\` or a postal address is provided
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="customer.name.last\_name" type="string" required=true %}
+{% api-method-parameter name="customer.name.prefix" type="string" required=false %}
+{% endapi-method-parameter %}
 
+{% api-method-parameter name="customer.name.first\_name" type="string" required=false %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.name.infix" type="string" required=false %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="customer.name.last\_name" type="string" required=true %}
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="customer.name.organization" type="string" required=false %}
-
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="external\_invoice\_number" type="string" required=true %}
