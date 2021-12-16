@@ -4,7 +4,7 @@ description: Manage Invoices.
 
 # Invoice
 
-{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
+{% api-method method="get" host="https://app.clubcollect.com/api" path="/v2/invoices/:id" %}
 {% api-method-summary %}
 Show Invoice
 {% endapi-method-summary %}
@@ -220,7 +220,7 @@ Partner API Key (Deprecated)
 {% endhint %}
 
 
-{% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/invoices" %}
+{% api-method method="post" host="https://app.clubcollect.com/api" path="/v2/invoices" %}
 {% api-method-summary %}
 Create Invoice
 {% endapi-method-summary %}
@@ -517,7 +517,7 @@ must be provided. i.e. there must be a way for us to contact the Customer via em
 **Note** It's not possible to add or delete invoice lines for an existing invoice. If an invoice is incorrectly created with a wrong amount outstanding (or the invoice becomes invalid for some reason after it's transmitted), the partner can credit it using `/credit_and_retract` endpoint.
 {% endhint %}
 
-{% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
+{% api-method method="put" host="https://app.clubcollect.com/api" path="/v2/invoices/:id" %}
 {% api-method-summary %}
 Update Invoice
 {% endapi-method-summary %}
@@ -788,7 +788,7 @@ When supplied, will be accepted and added to the Invoice only if it is a valid I
 * `invalid_customer_phone`: Phone number may not be empty if no email address is provided.
 * `invalid_content_type`: `Content-Type: application/json` must be provided.
 
-{% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/invoices/:id/credit\_and\_retract" %}
+{% api-method method="post" host="https://app.clubcollect.com/api" path="/v2/invoices/:id/credit\_and\_retract" %}
 {% api-method-summary %}
 Credit and Retract Invoice
 {% endapi-method-summary %}
@@ -953,7 +953,7 @@ Partner API Key (Deprecated)
 * `invalid_content_type`: `Content-Type: application/json` must be provided.
 * `payment_in_progress`: An invoice can't be credited or retracted if there's a payment in progress
 
-{% api-method method="delete" host="https://api.clubcollect.com/api" path="/v2/invoices/:id" %}
+{% api-method method="delete" host="https://app.clubcollect.com/api" path="/v2/invoices/:id" %}
 {% api-method-summary %}
 Delete Invoice
 {% endapi-method-summary %}
