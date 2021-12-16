@@ -8,7 +8,7 @@ description: 'Manage Companies, the entity representing an individual organisati
 This endpoint is not yet operational and is thus subject to change.
 {% endhint %}
 
-{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/companies/:id" %}
+{% api-method method="get" host="https://app.clubcollect.com/api" path="/v2/companies/:id" %}
 {% api-method-summary %}
 Show Company
 {% endapi-method-summary %}
@@ -77,7 +77,7 @@ Could not find a Company with this ID.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/companies" %}
+{% api-method method="post" host="https://app.clubcollect.com/api" path="/v2/companies" %}
 {% api-method-summary %}
 Create Company
 {% endapi-method-summary %}
@@ -182,7 +182,7 @@ Company successfully created.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/companies/:id" %}
+{% api-method method="put" host="https://app.clubcollect.com/api" path="/v2/companies/:id" %}
 {% api-method-summary %}
 Update Company
 {% endapi-method-summary %}

@@ -4,7 +4,7 @@ description: Manage Invoice Line Items.
 
 # Invoice Line
 
-{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/invoices/:id/lines" %}
+{% api-method method="get" host="https://app.clubcollect.com/api" path="/v2/invoices/:id/lines" %}
 {% api-method-summary %}
 Fetch Invoice Lines
 {% endapi-method-summary %}

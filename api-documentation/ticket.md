@@ -1,6 +1,6 @@
 # Ticket
 
-{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/invoices/:id/tickets" %}
+{% api-method method="get" host="https://app.clubcollect.com/api" path="/v2/invoices/:id/tickets" %}
 {% api-method-summary %}
 Fetch Tickets
 {% endapi-method-summary %}
@@ -73,7 +73,7 @@ Partner API Key (Deprecated)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/invoices/:id/tickets" %}
+{% api-method method="post" host="https://app.clubcollect.com/api" path="/v2/invoices/:id/tickets" %}
 {% api-method-summary %}
 Create Ticket
 {% endapi-method-summary %}
@@ -155,7 +155,7 @@ Invoice not found.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/invoices/:id/tickets/actions/archive" %}
+{% api-method method="post" host="https://app.clubcollect.com/api" path="/v2/invoices/:id/tickets/actions/archive" %}
 {% api-method-summary %}
 Archive Ticket
 {% endapi-method-summary %}
@@ -215,7 +215,7 @@ Partner API Key (Deprecated)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/invoices/:id/tickets/actions/assign\_to\_support" %}
+{% api-method method="post" host="https://app.clubcollect.com/api" path="/v2/invoices/:id/tickets/actions/assign\_to\_support" %}
 {% api-method-summary %}
 Assign Ticket to Support
 {% endapi-method-summary %}
@@ -275,7 +275,7 @@ Partner API Key (Deprecated)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/companies/:id/tickets/:status" %}
+{% api-method method="get" host="https://app.clubcollect.com/api" path="/v2/companies/:id/tickets/:status" %}
 {% api-method-summary %}
 Fetch All Tickets
 {% endapi-method-summary %}

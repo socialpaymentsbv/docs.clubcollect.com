@@ -4,7 +4,7 @@ description: 'Manage Imports, which are collections of Invoices.'
 
 # Import
 
-{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/imports/:id" %}
+{% api-method method="get" host="https://app.clubcollect.com/api" path="/v2/imports/:id" %}
 {% api-method-summary %}
 Show Import
 {% endapi-method-summary %}
@@ -75,7 +75,7 @@ Could not find an Import with this ID.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://api.clubcollect.com/api" path="/v2/imports" %}
+{% api-method method="post" host="https://app.clubcollect.com/api" path="/v2/imports" %}
 {% api-method-summary %}
 Create Import
 {% endapi-method-summary %}
@@ -158,7 +158,7 @@ are created.
 The following `/imports/:id/transmit` endpoint will be deprecated soon in favour of manually transmitting an Import via the ClubCollect User Interface. This gives treasurers the opportunity to configure settings correctly which is not possible via the API.
 {% endhint %}
 
-{% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/imports/:id/transmit" %}
+{% api-method method="put" host="https://app.clubcollect.com/api" path="/v2/imports/:id/transmit" %}
 {% api-method-summary %}
 Transmit Import
 {% endapi-method-summary %}
@@ -242,7 +242,7 @@ Batch successfully transmitted.
 Ensure you have finished creating all Invoices for this Import before calling this method. It is not possible to change or add more Invoices to an Import after the Import has been transmitted.
 {% endhint %}
 
-{% api-method method="put" host="https://api.clubcollect.com/api" path="/v2/imports/:id" %}
+{% api-method method="put" host="https://app.clubcollect.com/api" path="/v2/imports/:id" %}
 {% api-method-summary %}
 Update Import
 {% endapi-method-summary %}
@@ -343,7 +343,7 @@ are created.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://api.clubcollect.com/api" path="/v2/imports/:id" %}
+{% api-method method="delete" host="https://app.clubcollect.com/api" path="/v2/imports/:id" %}
 {% api-method-summary %}
 Delete Import
 {% endapi-method-summary %}
@@ -411,7 +411,7 @@ Batch successfully deleted.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.clubcollect.com/api" path="/v2/companies/:id/imports" %}
+{% api-method method="get" host="https://app.clubcollect.com/api" path="/v2/companies/:id/imports" %}
 {% api-method-summary %}
 Fetch Company Imports
 {% endapi-method-summary %}
